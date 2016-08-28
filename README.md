@@ -1,24 +1,22 @@
-# README
+# Tagger
+# Réseau social simpliste inspiré de Twitter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Le principe du site est le suivant:
 
-Things you may want to cover:
+* Un "Tag" Par Post, un Message < 140 caractères par Post et une image (optionnelle) par Post
 
-* Ruby version
+Spécificités techniques:
 
-* System dependencies
+* Réalisé sous Rails 5
 
-* Configuration
+* Système Utilisateur / Admin via Devise
 
-* Database creation
+* Upload d'image via CarrierWave vers un serveur Amazon S3
 
-* Database initialization
+* Base de donnée en PostGreSQL
 
-* How to run the test suite
+* Front en Slim, SASS et CoffeeScript
 
-* Services (job queues, cache servers, search engines, etc.)
+* Front: BootStrap 4-alpha, Font-Awesome (via sa gem).
 
-* Deployment instructions
-
-* ...
+* Deploiement sur Heroku: [simplon-tagger.herokuapp.com)](https://simplon-tagger.herokuapp.com/)
