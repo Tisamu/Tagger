@@ -1,0 +1,19 @@
+#post-modal.modal.fade tabindex="-1" role="dialog" aria-labelledby="post-modalLabel" aria-hidden="true"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+        h3 Write a Post
+      .modal-body
+        =form_for(:post, url: post_create_path, class:"form-inline") do |f|
+          .form-group
+            .input-group
+              p.tips Your message must finish by a character (not a Whitespace)..
+              br
+              =f.text_area :message, placeholder: "Write Something..", class:"form-control"
+              span#post-length 0/140 Max. characters
+              br
+              br
+              =f.file_field :picture
+              =f.text_field :tag, placeholder: "Choose ONLY ONE Tag", class:"form-control"
+            .modal-footer
+              =f.submit "Poster", class:"btn btn-primary"

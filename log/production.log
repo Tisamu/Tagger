@@ -1,0 +1,1042 @@
+I, [2016-08-28T11:45:56.442192 #4914]  INFO -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8] Started GET "/" for 127.0.0.1 at 2016-08-28 11:45:56 +0200
+I, [2016-08-28T11:45:56.447618 #4914]  INFO -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8] Processing by PostController#new as HTML
+I, [2016-08-28T11:45:56.515034 #4914]  INFO -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]   Rendering post/new.html.slim within layouts/application
+I, [2016-08-28T11:45:56.558620 #4914]  INFO -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]   Rendered post/_header.html.slim (11.3ms)
+D, [2016-08-28T11:45:56.564498 #4914] DEBUG -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]   [1m[35m (0.9ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T11:45:56.568663 #4914] DEBUG -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]   [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."tag" = $1[0m  [["tag", "test"]]
+D, [2016-08-28T11:45:56.581945 #4914] DEBUG -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T11:45:56.582633 #4914] DEBUG -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."tag" = $1[0m  [["tag", "test"]]
+D, [2016-08-28T11:45:56.601734 #4914] DEBUG -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]   [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T11:45:56.611494 #4914] DEBUG -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]   [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+D, [2016-08-28T11:45:56.643355 #4914] DEBUG -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2016-08-28T11:45:56.646638 #4914]  INFO -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]   Rendered post/_posts_list.html.slim (43.8ms)
+I, [2016-08-28T11:45:56.646784 #4914]  INFO -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]   Rendered post/new.html.slim within layouts/application (131.6ms)
+I, [2016-08-28T11:45:56.647079 #4914]  INFO -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8] Completed 500 Internal Server Error in 199ms (ActiveRecord: 13.7ms)
+F, [2016-08-28T11:45:56.648413 #4914] FATAL -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]   
+F, [2016-08-28T11:45:56.648470 #4914] FATAL -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8] ActionView::Template::Error (undefined method `username' for nil:NilClass):
+F, [2016-08-28T11:45:56.648663 #4914] FATAL -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]     1: -@posts.each do  |p|
+F, [2016-08-28T11:45:56.648707 #4914] FATAL -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]     2:   .post
+F, [2016-08-28T11:45:56.648735 #4914] FATAL -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]     3:     p 
+F, [2016-08-28T11:45:56.648770 #4914] FATAL -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]     4:       =link_to p.user.username, user_posts_path(p.user.username), class:"username"
+F, [2016-08-28T11:45:56.648797 #4914] FATAL -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]     5:     =fa_icon("tag")
+F, [2016-08-28T11:45:56.648821 #4914] FATAL -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]     6:     p.tag
+F, [2016-08-28T11:45:56.648843 #4914] FATAL -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]     7:       =link_to tag_show_path(p.tag)
+F, [2016-08-28T11:45:56.648867 #4914] FATAL -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8]   
+F, [2016-08-28T11:45:56.648890 #4914] FATAL -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8] app/views/post/_posts_list.html.slim:4:in `block in _app_views_post__posts_list_html_slim__4033592763129538502_54464880'
+F, [2016-08-28T11:45:56.648921 #4914] FATAL -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8] app/views/post/_posts_list.html.slim:1:in `_app_views_post__posts_list_html_slim__4033592763129538502_54464880'
+F, [2016-08-28T11:45:56.648946 #4914] FATAL -- : [726beccf-3c95-4e07-a1e7-44a9e9e5d8f8] app/views/post/new.html.slim:21:in `_app_views_post_new_html_slim___2770620908096206902_57127820'
+I, [2016-08-28T11:46:03.323242 #4914]  INFO -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093] Started GET "/" for 127.0.0.1 at 2016-08-28 11:46:03 +0200
+I, [2016-08-28T11:46:03.324166 #4914]  INFO -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093] Processing by PostController#new as HTML
+I, [2016-08-28T11:46:03.325532 #4914]  INFO -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]   Rendering post/new.html.slim within layouts/application
+I, [2016-08-28T11:46:03.326258 #4914]  INFO -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]   Rendered post/_header.html.slim (0.4ms)
+D, [2016-08-28T11:46:03.327475 #4914] DEBUG -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]   [1m[35m (0.5ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T11:46:03.329036 #4914] DEBUG -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]   [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."tag" = $1[0m  [["tag", "test"]]
+D, [2016-08-28T11:46:03.331028 #4914] DEBUG -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T11:46:03.331643 #4914] DEBUG -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."tag" = $1[0m  [["tag", "test"]]
+D, [2016-08-28T11:46:03.333916 #4914] DEBUG -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T11:46:03.335115 #4914] DEBUG -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]   [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+D, [2016-08-28T11:46:03.337536 #4914] DEBUG -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2016-08-28T11:46:03.340439 #4914]  INFO -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]   Rendered post/_posts_list.html.slim (6.2ms)
+I, [2016-08-28T11:46:03.340626 #4914]  INFO -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]   Rendered post/new.html.slim within layouts/application (14.9ms)
+I, [2016-08-28T11:46:03.340880 #4914]  INFO -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093] Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.6ms)
+F, [2016-08-28T11:46:03.342237 #4914] FATAL -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]   
+F, [2016-08-28T11:46:03.342307 #4914] FATAL -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093] ActionView::Template::Error (undefined method `username' for nil:NilClass):
+F, [2016-08-28T11:46:03.342471 #4914] FATAL -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]     1: -@posts.each do  |p|
+F, [2016-08-28T11:46:03.342516 #4914] FATAL -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]     2:   .post
+F, [2016-08-28T11:46:03.342547 #4914] FATAL -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]     3:     p 
+F, [2016-08-28T11:46:03.342575 #4914] FATAL -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]     4:       =link_to p.user.username, user_posts_path(p.user.username), class:"username"
+F, [2016-08-28T11:46:03.342603 #4914] FATAL -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]     5:     =fa_icon("tag")
+F, [2016-08-28T11:46:03.342635 #4914] FATAL -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]     6:     p.tag
+F, [2016-08-28T11:46:03.342663 #4914] FATAL -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]     7:       =link_to tag_show_path(p.tag)
+F, [2016-08-28T11:46:03.342687 #4914] FATAL -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093]   
+F, [2016-08-28T11:46:03.342731 #4914] FATAL -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093] app/views/post/_posts_list.html.slim:4:in `block in _app_views_post__posts_list_html_slim__4033592763129538502_54464880'
+F, [2016-08-28T11:46:03.342756 #4914] FATAL -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093] app/views/post/_posts_list.html.slim:1:in `_app_views_post__posts_list_html_slim__4033592763129538502_54464880'
+F, [2016-08-28T11:46:03.342780 #4914] FATAL -- : [fd3ce4ca-2db3-4c1f-a833-c46dd8e9f093] app/views/post/new.html.slim:21:in `_app_views_post_new_html_slim___2770620908096206902_57127820'
+I, [2016-08-28T11:48:47.225134 #5033]  INFO -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe] Started GET "/" for 127.0.0.1 at 2016-08-28 11:48:47 +0200
+I, [2016-08-28T11:48:47.230754 #5033]  INFO -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe] Processing by PostController#new as HTML
+I, [2016-08-28T11:48:47.246937 #5033]  INFO -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe]   Rendering post/new.html.slim within layouts/application
+I, [2016-08-28T11:48:47.277985 #5033]  INFO -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe]   Rendered post/_header.html.slim (11.4ms)
+I, [2016-08-28T11:48:47.280585 #5033]  INFO -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe]   Rendered post/new.html.slim within layouts/application (33.5ms)
+I, [2016-08-28T11:48:47.280906 #5033]  INFO -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe] Completed 500 Internal Server Error in 50ms (ActiveRecord: 1.3ms)
+F, [2016-08-28T11:48:47.282508 #5033] FATAL -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe]   
+F, [2016-08-28T11:48:47.282587 #5033] FATAL -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe] ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "posts" does not exist
+LINE 8:                WHERE a.attrelid = '"posts"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+             (SELECT c.collname FROM pg_collation c, pg_type t
+               WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation),
+                     col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"posts"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+F, [2016-08-28T11:48:47.282785 #5033] FATAL -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe]     3: .col-xs-12.col-lg-3
+F, [2016-08-28T11:48:47.282832 #5033] FATAL -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe]     4:   h5 Most Popular Tags
+F, [2016-08-28T11:48:47.282869 #5033] FATAL -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe]     5:   ul#tag-list.list-group
+F, [2016-08-28T11:48:47.282897 #5033] FATAL -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe]     6:     - if Post.tag_top_ten.length == 0
+F, [2016-08-28T11:48:47.282924 #5033] FATAL -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe]     7:       h5.nothing Nothing to Display..
+F, [2016-08-28T11:48:47.282972 #5033] FATAL -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe]     8:     -else
+F, [2016-08-28T11:48:47.282996 #5033] FATAL -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe]     9:       - Post.tag_top_ten.each do |tag|
+F, [2016-08-28T11:48:47.283062 #5033] FATAL -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe]   
+F, [2016-08-28T11:48:47.283100 #5033] FATAL -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe] app/models/post.rb:15:in `tag_top_ten'
+F, [2016-08-28T11:48:47.283126 #5033] FATAL -- : [dafff64d-dbac-4ace-b0ff-b0615c30adfe] app/views/post/new.html.slim:6:in `_app_views_post_new_html_slim___692360922506053552_54425420'
+I, [2016-08-28T11:49:25.888506 #5108]  INFO -- : [209840f8-64bf-4070-869c-748cb8856cb5] Started GET "/" for 127.0.0.1 at 2016-08-28 11:49:25 +0200
+I, [2016-08-28T11:49:25.894070 #5108]  INFO -- : [209840f8-64bf-4070-869c-748cb8856cb5] Processing by PostController#new as HTML
+I, [2016-08-28T11:49:25.910570 #5108]  INFO -- : [209840f8-64bf-4070-869c-748cb8856cb5]   Rendering post/new.html.slim within layouts/application
+I, [2016-08-28T11:49:25.943634 #5108]  INFO -- : [209840f8-64bf-4070-869c-748cb8856cb5]   Rendered post/_header.html.slim (11.6ms)
+I, [2016-08-28T11:49:25.946017 #5108]  INFO -- : [209840f8-64bf-4070-869c-748cb8856cb5]   Rendered post/new.html.slim within layouts/application (35.3ms)
+I, [2016-08-28T11:49:25.946316 #5108]  INFO -- : [209840f8-64bf-4070-869c-748cb8856cb5] Completed 500 Internal Server Error in 52ms (ActiveRecord: 1.1ms)
+F, [2016-08-28T11:49:25.947761 #5108] FATAL -- : [209840f8-64bf-4070-869c-748cb8856cb5]   
+F, [2016-08-28T11:49:25.947834 #5108] FATAL -- : [209840f8-64bf-4070-869c-748cb8856cb5] ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "posts" does not exist
+LINE 8:                WHERE a.attrelid = '"posts"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+             (SELECT c.collname FROM pg_collation c, pg_type t
+               WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation),
+                     col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"posts"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+F, [2016-08-28T11:49:25.948023 #5108] FATAL -- : [209840f8-64bf-4070-869c-748cb8856cb5]     3: .col-xs-12.col-lg-3
+F, [2016-08-28T11:49:25.948068 #5108] FATAL -- : [209840f8-64bf-4070-869c-748cb8856cb5]     4:   h5 Most Popular Tags
+F, [2016-08-28T11:49:25.948096 #5108] FATAL -- : [209840f8-64bf-4070-869c-748cb8856cb5]     5:   ul#tag-list.list-group
+F, [2016-08-28T11:49:25.948130 #5108] FATAL -- : [209840f8-64bf-4070-869c-748cb8856cb5]     6:     - if Post.tag_top_ten.length == 0
+F, [2016-08-28T11:49:25.948158 #5108] FATAL -- : [209840f8-64bf-4070-869c-748cb8856cb5]     7:       h5.nothing Nothing to Display..
+F, [2016-08-28T11:49:25.948184 #5108] FATAL -- : [209840f8-64bf-4070-869c-748cb8856cb5]     8:     -else
+F, [2016-08-28T11:49:25.948209 #5108] FATAL -- : [209840f8-64bf-4070-869c-748cb8856cb5]     9:       - Post.tag_top_ten.each do |tag|
+F, [2016-08-28T11:49:25.948234 #5108] FATAL -- : [209840f8-64bf-4070-869c-748cb8856cb5]   
+F, [2016-08-28T11:49:25.948259 #5108] FATAL -- : [209840f8-64bf-4070-869c-748cb8856cb5] app/models/post.rb:15:in `tag_top_ten'
+F, [2016-08-28T11:49:25.948281 #5108] FATAL -- : [209840f8-64bf-4070-869c-748cb8856cb5] app/views/post/new.html.slim:6:in `_app_views_post_new_html_slim__1174441918590873568_60434360'
+I, [2016-08-28T11:49:28.820620 #5108]  INFO -- : [f61f3430-01cf-466f-9f11-f1bade070a5f] Started GET "/" for 127.0.0.1 at 2016-08-28 11:49:28 +0200
+I, [2016-08-28T11:49:28.821644 #5108]  INFO -- : [f61f3430-01cf-466f-9f11-f1bade070a5f] Processing by PostController#new as HTML
+I, [2016-08-28T11:49:28.822973 #5108]  INFO -- : [f61f3430-01cf-466f-9f11-f1bade070a5f]   Rendering post/new.html.slim within layouts/application
+I, [2016-08-28T11:49:28.823702 #5108]  INFO -- : [f61f3430-01cf-466f-9f11-f1bade070a5f]   Rendered post/_header.html.slim (0.3ms)
+I, [2016-08-28T11:49:28.825714 #5108]  INFO -- : [f61f3430-01cf-466f-9f11-f1bade070a5f]   Rendered post/new.html.slim within layouts/application (2.6ms)
+I, [2016-08-28T11:49:28.825995 #5108]  INFO -- : [f61f3430-01cf-466f-9f11-f1bade070a5f] Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.9ms)
+F, [2016-08-28T11:49:28.827402 #5108] FATAL -- : [f61f3430-01cf-466f-9f11-f1bade070a5f]   
+F, [2016-08-28T11:49:28.827480 #5108] FATAL -- : [f61f3430-01cf-466f-9f11-f1bade070a5f] ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "posts" does not exist
+LINE 8:                WHERE a.attrelid = '"posts"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+             (SELECT c.collname FROM pg_collation c, pg_type t
+               WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation),
+                     col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"posts"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+F, [2016-08-28T11:49:28.827676 #5108] FATAL -- : [f61f3430-01cf-466f-9f11-f1bade070a5f]     3: .col-xs-12.col-lg-3
+F, [2016-08-28T11:49:28.827720 #5108] FATAL -- : [f61f3430-01cf-466f-9f11-f1bade070a5f]     4:   h5 Most Popular Tags
+F, [2016-08-28T11:49:28.827748 #5108] FATAL -- : [f61f3430-01cf-466f-9f11-f1bade070a5f]     5:   ul#tag-list.list-group
+F, [2016-08-28T11:49:28.827776 #5108] FATAL -- : [f61f3430-01cf-466f-9f11-f1bade070a5f]     6:     - if Post.tag_top_ten.length == 0
+F, [2016-08-28T11:49:28.827801 #5108] FATAL -- : [f61f3430-01cf-466f-9f11-f1bade070a5f]     7:       h5.nothing Nothing to Display..
+F, [2016-08-28T11:49:28.827824 #5108] FATAL -- : [f61f3430-01cf-466f-9f11-f1bade070a5f]     8:     -else
+F, [2016-08-28T11:49:28.827854 #5108] FATAL -- : [f61f3430-01cf-466f-9f11-f1bade070a5f]     9:       - Post.tag_top_ten.each do |tag|
+F, [2016-08-28T11:49:28.827879 #5108] FATAL -- : [f61f3430-01cf-466f-9f11-f1bade070a5f]   
+F, [2016-08-28T11:49:28.827926 #5108] FATAL -- : [f61f3430-01cf-466f-9f11-f1bade070a5f] app/models/post.rb:15:in `tag_top_ten'
+F, [2016-08-28T11:49:28.827951 #5108] FATAL -- : [f61f3430-01cf-466f-9f11-f1bade070a5f] app/views/post/new.html.slim:6:in `_app_views_post_new_html_slim__1174441918590873568_60434360'
+I, [2016-08-28T11:49:29.125002 #5108]  INFO -- : [bd3891b0-829f-403d-999c-54d10d045f05] Started GET "/" for 127.0.0.1 at 2016-08-28 11:49:29 +0200
+I, [2016-08-28T11:49:29.127078 #5108]  INFO -- : [bd3891b0-829f-403d-999c-54d10d045f05] Processing by PostController#new as HTML
+I, [2016-08-28T11:49:29.129800 #5108]  INFO -- : [bd3891b0-829f-403d-999c-54d10d045f05]   Rendering post/new.html.slim within layouts/application
+I, [2016-08-28T11:49:29.131138 #5108]  INFO -- : [bd3891b0-829f-403d-999c-54d10d045f05]   Rendered post/_header.html.slim (0.6ms)
+I, [2016-08-28T11:49:29.134366 #5108]  INFO -- : [bd3891b0-829f-403d-999c-54d10d045f05]   Rendered post/new.html.slim within layouts/application (4.3ms)
+I, [2016-08-28T11:49:29.134747 #5108]  INFO -- : [bd3891b0-829f-403d-999c-54d10d045f05] Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.4ms)
+F, [2016-08-28T11:49:29.137144 #5108] FATAL -- : [bd3891b0-829f-403d-999c-54d10d045f05]   
+F, [2016-08-28T11:49:29.137263 #5108] FATAL -- : [bd3891b0-829f-403d-999c-54d10d045f05] ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "posts" does not exist
+LINE 8:                WHERE a.attrelid = '"posts"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+             (SELECT c.collname FROM pg_collation c, pg_type t
+               WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation),
+                     col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"posts"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+F, [2016-08-28T11:49:29.137583 #5108] FATAL -- : [bd3891b0-829f-403d-999c-54d10d045f05]     3: .col-xs-12.col-lg-3
+F, [2016-08-28T11:49:29.137657 #5108] FATAL -- : [bd3891b0-829f-403d-999c-54d10d045f05]     4:   h5 Most Popular Tags
+F, [2016-08-28T11:49:29.137706 #5108] FATAL -- : [bd3891b0-829f-403d-999c-54d10d045f05]     5:   ul#tag-list.list-group
+F, [2016-08-28T11:49:29.137750 #5108] FATAL -- : [bd3891b0-829f-403d-999c-54d10d045f05]     6:     - if Post.tag_top_ten.length == 0
+F, [2016-08-28T11:49:29.137832 #5108] FATAL -- : [bd3891b0-829f-403d-999c-54d10d045f05]     7:       h5.nothing Nothing to Display..
+F, [2016-08-28T11:49:29.137873 #5108] FATAL -- : [bd3891b0-829f-403d-999c-54d10d045f05]     8:     -else
+F, [2016-08-28T11:49:29.137942 #5108] FATAL -- : [bd3891b0-829f-403d-999c-54d10d045f05]     9:       - Post.tag_top_ten.each do |tag|
+F, [2016-08-28T11:49:29.137988 #5108] FATAL -- : [bd3891b0-829f-403d-999c-54d10d045f05]   
+F, [2016-08-28T11:49:29.138030 #5108] FATAL -- : [bd3891b0-829f-403d-999c-54d10d045f05] app/models/post.rb:15:in `tag_top_ten'
+F, [2016-08-28T11:49:29.138069 #5108] FATAL -- : [bd3891b0-829f-403d-999c-54d10d045f05] app/views/post/new.html.slim:6:in `_app_views_post_new_html_slim__1174441918590873568_60434360'
+I, [2016-08-28T11:49:29.332324 #5108]  INFO -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401] Started GET "/" for 127.0.0.1 at 2016-08-28 11:49:29 +0200
+I, [2016-08-28T11:49:29.333773 #5108]  INFO -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401] Processing by PostController#new as HTML
+I, [2016-08-28T11:49:29.335969 #5108]  INFO -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401]   Rendering post/new.html.slim within layouts/application
+I, [2016-08-28T11:49:29.337136 #5108]  INFO -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401]   Rendered post/_header.html.slim (0.6ms)
+I, [2016-08-28T11:49:29.339920 #5108]  INFO -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401]   Rendered post/new.html.slim within layouts/application (3.7ms)
+I, [2016-08-28T11:49:29.340212 #5108]  INFO -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401] Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.5ms)
+F, [2016-08-28T11:49:29.341702 #5108] FATAL -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401]   
+F, [2016-08-28T11:49:29.341819 #5108] FATAL -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401] ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "posts" does not exist
+LINE 8:                WHERE a.attrelid = '"posts"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+             (SELECT c.collname FROM pg_collation c, pg_type t
+               WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation),
+                     col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"posts"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+F, [2016-08-28T11:49:29.342059 #5108] FATAL -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401]     3: .col-xs-12.col-lg-3
+F, [2016-08-28T11:49:29.342114 #5108] FATAL -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401]     4:   h5 Most Popular Tags
+F, [2016-08-28T11:49:29.342170 #5108] FATAL -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401]     5:   ul#tag-list.list-group
+F, [2016-08-28T11:49:29.342233 #5108] FATAL -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401]     6:     - if Post.tag_top_ten.length == 0
+F, [2016-08-28T11:49:29.342287 #5108] FATAL -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401]     7:       h5.nothing Nothing to Display..
+F, [2016-08-28T11:49:29.342339 #5108] FATAL -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401]     8:     -else
+F, [2016-08-28T11:49:29.342389 #5108] FATAL -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401]     9:       - Post.tag_top_ten.each do |tag|
+F, [2016-08-28T11:49:29.342440 #5108] FATAL -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401]   
+F, [2016-08-28T11:49:29.342490 #5108] FATAL -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401] app/models/post.rb:15:in `tag_top_ten'
+F, [2016-08-28T11:49:29.342546 #5108] FATAL -- : [5c785d5b-2139-4d4f-bd72-c553fc26d401] app/views/post/new.html.slim:6:in `_app_views_post_new_html_slim__1174441918590873568_60434360'
+D, [2016-08-28T11:52:11.892141 #5204] DEBUG -- :   [1m[35m (471.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+D, [2016-08-28T11:52:11.991602 #5204] DEBUG -- :   [1m[35m (92.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2016-08-28T11:52:11.992878 #5204] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4197945851564508225);[0m
+D, [2016-08-28T11:52:12.008887 #5204] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+I, [2016-08-28T11:52:12.015817 #5204]  INFO -- : Migrating to DeviseCreateUsers (20160816092912)
+D, [2016-08-28T11:52:12.056442 #5204] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+D, [2016-08-28T11:52:12.155792 #5204] DEBUG -- :   [1m[35m (93.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "username" character varying, "admin" boolean, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2016-08-28T11:52:12.200433 #5204] DEBUG -- :   [1m[35m (41.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+D, [2016-08-28T11:52:12.244963 #5204] DEBUG -- :   [1m[35m (41.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+D, [2016-08-28T11:52:12.249104 #5204] DEBUG -- :   [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160816092912"]]
+D, [2016-08-28T11:52:12.268561 #5204] DEBUG -- :   [1m[35m (19.1ms)[0m  [1m[35mCOMMIT[0m
+I, [2016-08-28T11:52:12.268695 #5204]  INFO -- : Migrating to CreatePosts (20160817184714)
+D, [2016-08-28T11:52:12.269665 #5204] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+D, [2016-08-28T11:52:12.367702 #5204] DEBUG -- :   [1m[35m (97.3ms)[0m  [1m[35mCREATE TABLE "posts" ("id" serial primary key, "message" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2016-08-28T11:52:12.369113 #5204] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160817184714"]]
+D, [2016-08-28T11:52:12.390553 #5204] DEBUG -- :   [1m[35m (21.1ms)[0m  [1m[35mCOMMIT[0m
+I, [2016-08-28T11:52:12.390685 #5204]  INFO -- : Migrating to SetDefaultAdminValueToUser (20160817191419)
+D, [2016-08-28T11:52:12.391647 #5204] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+D, [2016-08-28T11:52:12.392488 #5204] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "admin" TYPE boolean[0m
+D, [2016-08-28T11:52:12.396126 #5204] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "admin" SET DEFAULT 'f'[0m
+D, [2016-08-28T11:52:12.398240 #5204] DEBUG -- :   [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160817191419"]]
+D, [2016-08-28T11:52:12.401611 #5204] DEBUG -- :   [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+I, [2016-08-28T11:52:12.401741 #5204]  INFO -- : Migrating to CreateTags (20160818082201)
+D, [2016-08-28T11:52:12.402636 #5204] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+D, [2016-08-28T11:52:12.479373 #5204] DEBUG -- :   [1m[35m (76.0ms)[0m  [1m[35mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2016-08-28T11:52:12.480722 #5204] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818082201"]]
+D, [2016-08-28T11:52:12.501521 #5204] DEBUG -- :   [1m[35m (20.5ms)[0m  [1m[35mCOMMIT[0m
+I, [2016-08-28T11:52:12.501666 #5204]  INFO -- : Migrating to AddTagIdColumnToPosts (20160820161811)
+D, [2016-08-28T11:52:12.502554 #5204] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+D, [2016-08-28T11:52:12.503461 #5204] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "posts" ADD "tag" character varying[0m
+D, [2016-08-28T11:52:12.504719 #5204] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160820161811"]]
+D, [2016-08-28T11:52:12.512540 #5204] DEBUG -- :   [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+I, [2016-08-28T11:52:12.512689 #5204]  INFO -- : Migrating to AddAvatarToUsers (20160821131928)
+D, [2016-08-28T11:52:12.513580 #5204] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+D, [2016-08-28T11:52:12.514370 #5204] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "avatar" character varying[0m
+D, [2016-08-28T11:52:12.515650 #5204] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160821131928"]]
+D, [2016-08-28T11:52:12.523872 #5204] DEBUG -- :   [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+I, [2016-08-28T11:52:12.524061 #5204]  INFO -- : Migrating to AddPictureToPost (20160823063851)
+D, [2016-08-28T11:52:12.525102 #5204] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+D, [2016-08-28T11:52:12.526059 #5204] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "posts" ADD "picture" character varying[0m
+D, [2016-08-28T11:52:12.527400 #5204] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160823063851"]]
+D, [2016-08-28T11:52:12.534638 #5204] DEBUG -- :   [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+I, [2016-08-28T11:52:12.534770 #5204]  INFO -- : Migrating to DropTagTable (20160826060726)
+D, [2016-08-28T11:52:12.535621 #5204] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+D, [2016-08-28T11:52:12.537186 #5204] DEBUG -- :   [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE "tags"[0m
+D, [2016-08-28T11:52:12.538815 #5204] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160826060726"]]
+D, [2016-08-28T11:52:12.568439 #5204] DEBUG -- :   [1m[35m (29.2ms)[0m  [1m[35mCOMMIT[0m
+D, [2016-08-28T11:52:12.573852 #5204] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+D, [2016-08-28T11:52:12.578919 #5204] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+D, [2016-08-28T11:52:12.580839 #5204] DEBUG -- :   [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "production"], ["created_at", 2016-08-28 09:52:12 UTC], ["updated_at", 2016-08-28 09:52:12 UTC]]
+D, [2016-08-28T11:52:12.590036 #5204] DEBUG -- :   [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+D, [2016-08-28T11:52:12.590710 #5204] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4197945851564508225)[0m
+I, [2016-08-28T11:52:21.825575 #5212]  INFO -- : [ead26830-b056-4b62-aff7-8f6420f74c87] Started GET "/" for 127.0.0.1 at 2016-08-28 11:52:21 +0200
+I, [2016-08-28T11:52:21.831033 #5212]  INFO -- : [ead26830-b056-4b62-aff7-8f6420f74c87] Processing by PostController#new as HTML
+I, [2016-08-28T11:52:21.847102 #5212]  INFO -- : [ead26830-b056-4b62-aff7-8f6420f74c87]   Rendering post/new.html.slim within layouts/application
+I, [2016-08-28T11:52:21.879673 #5212]  INFO -- : [ead26830-b056-4b62-aff7-8f6420f74c87]   Rendered post/_header.html.slim (12.2ms)
+D, [2016-08-28T11:52:21.885360 #5212] DEBUG -- : [ead26830-b056-4b62-aff7-8f6420f74c87]   [1m[35m (0.8ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T11:52:21.886840 #5212] DEBUG -- : [ead26830-b056-4b62-aff7-8f6420f74c87]   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T11:52:21.899383 #5212] DEBUG -- : [ead26830-b056-4b62-aff7-8f6420f74c87]   [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+I, [2016-08-28T11:52:21.899886 #5212]  INFO -- : [ead26830-b056-4b62-aff7-8f6420f74c87]   Rendered post/_posts_list.html.slim (12.0ms)
+I, [2016-08-28T11:52:21.912878 #5212]  INFO -- : [ead26830-b056-4b62-aff7-8f6420f74c87]   Rendered post/_post_modal.html.slim (12.1ms)
+I, [2016-08-28T11:52:21.913034 #5212]  INFO -- : [ead26830-b056-4b62-aff7-8f6420f74c87]   Rendered post/new.html.slim within layouts/application (65.8ms)
+I, [2016-08-28T11:52:21.924825 #5212]  INFO -- : [ead26830-b056-4b62-aff7-8f6420f74c87] Completed 200 OK in 94ms (Views: 74.8ms | ActiveRecord: 4.9ms)
+I, [2016-08-28T11:52:21.956480 #5212]  INFO -- : [24b66397-d61d-4e21-8755-5cad7d857461] Started GET "/stylesheets/application.css" for 127.0.0.1 at 2016-08-28 11:52:21 +0200
+F, [2016-08-28T11:52:21.957932 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461]   
+F, [2016-08-28T11:52:21.958051 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+F, [2016-08-28T11:52:21.958127 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461]   
+F, [2016-08-28T11:52:21.958189 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T11:52:21.958245 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T11:52:21.958307 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T11:52:21.958362 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T11:52:21.958413 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T11:52:21.958463 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T11:52:21.958516 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T11:52:21.958577 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T11:52:21.958633 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T11:52:21.958687 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T11:52:21.958738 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T11:52:21.958787 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T11:52:21.958850 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T11:52:21.958905 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T11:52:21.958958 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T11:52:21.959036 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T11:52:21.959095 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T11:52:21.959173 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T11:52:21.959233 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T11:52:21.959286 #5212] FATAL -- : [24b66397-d61d-4e21-8755-5cad7d857461] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T11:52:21.984579 #5212]  INFO -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] Started GET "/javascripts/application.js" for 127.0.0.1 at 2016-08-28 11:52:21 +0200
+F, [2016-08-28T11:52:21.985527 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218]   
+F, [2016-08-28T11:52:21.985626 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+F, [2016-08-28T11:52:21.985746 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218]   
+F, [2016-08-28T11:52:21.985803 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T11:52:21.985853 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T11:52:21.985902 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T11:52:21.985951 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T11:52:21.986004 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T11:52:21.986052 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T11:52:21.986097 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T11:52:21.986143 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T11:52:21.986186 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T11:52:21.986237 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T11:52:21.986282 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T11:52:21.986325 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T11:52:21.986369 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T11:52:21.986412 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T11:52:21.986465 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T11:52:21.986514 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T11:52:21.986562 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T11:52:21.986611 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T11:52:21.986658 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T11:52:21.986717 #5212] FATAL -- : [c0d6c0a7-02cd-4e0f-abc5-b9b038614218] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T11:52:24.682847 #5212]  INFO -- : [35fb96b8-460c-4454-80c1-3b7860c85443] Started GET "/" for 127.0.0.1 at 2016-08-28 11:52:24 +0200
+I, [2016-08-28T11:52:24.684761 #5212]  INFO -- : [35fb96b8-460c-4454-80c1-3b7860c85443] Processing by PostController#new as HTML
+I, [2016-08-28T11:52:24.688165 #5212]  INFO -- : [35fb96b8-460c-4454-80c1-3b7860c85443]   Rendering post/new.html.slim within layouts/application
+I, [2016-08-28T11:52:24.689319 #5212]  INFO -- : [35fb96b8-460c-4454-80c1-3b7860c85443]   Rendered post/_header.html.slim (0.5ms)
+D, [2016-08-28T11:52:24.691609 #5212] DEBUG -- : [35fb96b8-460c-4454-80c1-3b7860c85443]   [1m[35m (1.5ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T11:52:24.693030 #5212] DEBUG -- : [35fb96b8-460c-4454-80c1-3b7860c85443]   [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T11:52:24.695024 #5212] DEBUG -- : [35fb96b8-460c-4454-80c1-3b7860c85443]   [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+I, [2016-08-28T11:52:24.695790 #5212]  INFO -- : [35fb96b8-460c-4454-80c1-3b7860c85443]   Rendered post/_posts_list.html.slim (2.3ms)
+I, [2016-08-28T11:52:24.697880 #5212]  INFO -- : [35fb96b8-460c-4454-80c1-3b7860c85443]   Rendered post/_post_modal.html.slim (1.7ms)
+I, [2016-08-28T11:52:24.698117 #5212]  INFO -- : [35fb96b8-460c-4454-80c1-3b7860c85443]   Rendered post/new.html.slim within layouts/application (9.7ms)
+I, [2016-08-28T11:52:24.700458 #5212]  INFO -- : [35fb96b8-460c-4454-80c1-3b7860c85443] Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 2.9ms)
+I, [2016-08-28T11:52:24.733430 #5212]  INFO -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] Started GET "/stylesheets/application.css" for 127.0.0.1 at 2016-08-28 11:52:24 +0200
+F, [2016-08-28T11:52:24.734748 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936]   
+F, [2016-08-28T11:52:24.734860 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+F, [2016-08-28T11:52:24.734931 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936]   
+F, [2016-08-28T11:52:24.734990 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T11:52:24.735088 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T11:52:24.735143 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T11:52:24.735196 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T11:52:24.735247 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T11:52:24.735299 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T11:52:24.735361 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T11:52:24.735413 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T11:52:24.735464 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T11:52:24.735514 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T11:52:24.735568 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T11:52:24.735630 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T11:52:24.735700 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T11:52:24.735755 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T11:52:24.735807 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T11:52:24.735857 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T11:52:24.735920 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T11:52:24.736003 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T11:52:24.736054 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T11:52:24.736102 #5212] FATAL -- : [e9b0fe65-f18a-4d8a-93c9-febc88d0b936] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T11:52:24.737930 #5212]  INFO -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] Started GET "/javascripts/application.js" for 127.0.0.1 at 2016-08-28 11:52:24 +0200
+F, [2016-08-28T11:52:24.739330 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2]   
+F, [2016-08-28T11:52:24.739457 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+F, [2016-08-28T11:52:24.739539 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2]   
+F, [2016-08-28T11:52:24.739601 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T11:52:24.739657 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T11:52:24.739708 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T11:52:24.739758 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T11:52:24.739855 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T11:52:24.739905 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T11:52:24.739953 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T11:52:24.740002 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T11:52:24.740052 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T11:52:24.740107 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T11:52:24.740159 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T11:52:24.740210 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T11:52:24.740259 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T11:52:24.740309 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T11:52:24.740364 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T11:52:24.740428 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T11:52:24.740480 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T11:52:24.740530 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T11:52:24.740579 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T11:52:24.740632 #5212] FATAL -- : [554a16dc-144a-48ef-ab87-14e127fee5a2] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T11:54:06.754621 #5212]  INFO -- : [80607f05-4158-4ffc-b592-4862226000c7] Started GET "/" for 127.0.0.1 at 2016-08-28 11:54:06 +0200
+I, [2016-08-28T11:54:06.755565 #5212]  INFO -- : [80607f05-4158-4ffc-b592-4862226000c7] Processing by PostController#new as HTML
+I, [2016-08-28T11:54:06.756974 #5212]  INFO -- : [80607f05-4158-4ffc-b592-4862226000c7]   Rendering post/new.html.slim within layouts/application
+I, [2016-08-28T11:54:06.757700 #5212]  INFO -- : [80607f05-4158-4ffc-b592-4862226000c7]   Rendered post/_header.html.slim (0.4ms)
+D, [2016-08-28T11:54:06.758794 #5212] DEBUG -- : [80607f05-4158-4ffc-b592-4862226000c7]   [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T11:54:06.759931 #5212] DEBUG -- : [80607f05-4158-4ffc-b592-4862226000c7]   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T11:54:06.761370 #5212] DEBUG -- : [80607f05-4158-4ffc-b592-4862226000c7]   [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+I, [2016-08-28T11:54:06.761744 #5212]  INFO -- : [80607f05-4158-4ffc-b592-4862226000c7]   Rendered post/_posts_list.html.slim (1.3ms)
+I, [2016-08-28T11:54:06.762931 #5212]  INFO -- : [80607f05-4158-4ffc-b592-4862226000c7]   Rendered post/_post_modal.html.slim (0.9ms)
+I, [2016-08-28T11:54:06.763189 #5212]  INFO -- : [80607f05-4158-4ffc-b592-4862226000c7]   Rendered post/new.html.slim within layouts/application (6.0ms)
+I, [2016-08-28T11:54:06.764626 #5212]  INFO -- : [80607f05-4158-4ffc-b592-4862226000c7] Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 1.2ms)
+I, [2016-08-28T11:54:06.798631 #5212]  INFO -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] Started GET "/stylesheets/application.css" for 127.0.0.1 at 2016-08-28 11:54:06 +0200
+F, [2016-08-28T11:54:06.799698 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438]   
+F, [2016-08-28T11:54:06.799799 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+F, [2016-08-28T11:54:06.799870 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438]   
+F, [2016-08-28T11:54:06.799928 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T11:54:06.799992 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T11:54:06.800046 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T11:54:06.800096 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T11:54:06.800144 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T11:54:06.800192 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T11:54:06.800245 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T11:54:06.800303 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T11:54:06.800351 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T11:54:06.800397 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T11:54:06.800443 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T11:54:06.800492 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T11:54:06.800537 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T11:54:06.800581 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T11:54:06.800625 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T11:54:06.800668 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T11:54:06.800711 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T11:54:06.800778 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T11:54:06.800822 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T11:54:06.800864 #5212] FATAL -- : [5bf66eb4-11c5-481f-8c91-6cd1ca0dd438] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T11:54:06.802916 #5212]  INFO -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] Started GET "/javascripts/application.js" for 127.0.0.1 at 2016-08-28 11:54:06 +0200
+F, [2016-08-28T11:54:06.804190 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d]   
+F, [2016-08-28T11:54:06.804298 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+F, [2016-08-28T11:54:06.804361 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d]   
+F, [2016-08-28T11:54:06.804437 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T11:54:06.804500 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T11:54:06.804552 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T11:54:06.804612 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T11:54:06.804661 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T11:54:06.804707 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T11:54:06.804752 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T11:54:06.804792 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T11:54:06.804839 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T11:54:06.804879 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T11:54:06.804932 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T11:54:06.804981 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T11:54:06.805027 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T11:54:06.805078 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T11:54:06.805118 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T11:54:06.805156 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T11:54:06.805193 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T11:54:06.805237 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T11:54:06.805286 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T11:54:06.805342 #5212] FATAL -- : [5e63d155-c945-43c2-9b61-0661ac96f86d] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T11:54:07.442800 #5212]  INFO -- : [1ebc68fe-2e03-4ae2-9ef3-10d587745ab8] Started GET "/" for 127.0.0.1 at 2016-08-28 11:54:07 +0200
+I, [2016-08-28T11:54:07.443672 #5212]  INFO -- : [1ebc68fe-2e03-4ae2-9ef3-10d587745ab8] Processing by PostController#new as HTML
+I, [2016-08-28T11:54:07.444954 #5212]  INFO -- : [1ebc68fe-2e03-4ae2-9ef3-10d587745ab8]   Rendering post/new.html.slim within layouts/application
+I, [2016-08-28T11:54:07.445539 #5212]  INFO -- : [1ebc68fe-2e03-4ae2-9ef3-10d587745ab8]   Rendered post/_header.html.slim (0.3ms)
+D, [2016-08-28T11:54:07.446510 #5212] DEBUG -- : [1ebc68fe-2e03-4ae2-9ef3-10d587745ab8]   [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T11:54:07.447738 #5212] DEBUG -- : [1ebc68fe-2e03-4ae2-9ef3-10d587745ab8]   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T11:54:07.449070 #5212] DEBUG -- : [1ebc68fe-2e03-4ae2-9ef3-10d587745ab8]   [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+I, [2016-08-28T11:54:07.449395 #5212]  INFO -- : [1ebc68fe-2e03-4ae2-9ef3-10d587745ab8]   Rendered post/_posts_list.html.slim (1.3ms)
+I, [2016-08-28T11:54:07.450438 #5212]  INFO -- : [1ebc68fe-2e03-4ae2-9ef3-10d587745ab8]   Rendered post/_post_modal.html.slim (0.8ms)
+I, [2016-08-28T11:54:07.450553 #5212]  INFO -- : [1ebc68fe-2e03-4ae2-9ef3-10d587745ab8]   Rendered post/new.html.slim within layouts/application (5.5ms)
+I, [2016-08-28T11:54:07.451737 #5212]  INFO -- : [1ebc68fe-2e03-4ae2-9ef3-10d587745ab8] Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 1.3ms)
+I, [2016-08-28T11:54:07.478710 #5212]  INFO -- : [4114bd20-f88b-411d-8d99-c4f97c563814] Started GET "/stylesheets/application.css" for 127.0.0.1 at 2016-08-28 11:54:07 +0200
+F, [2016-08-28T11:54:07.479573 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814]   
+F, [2016-08-28T11:54:07.479660 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+F, [2016-08-28T11:54:07.479699 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814]   
+F, [2016-08-28T11:54:07.479732 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T11:54:07.479761 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T11:54:07.479800 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T11:54:07.479834 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T11:54:07.479859 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T11:54:07.479883 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T11:54:07.479907 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T11:54:07.479931 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T11:54:07.479962 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T11:54:07.480017 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T11:54:07.480041 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T11:54:07.480065 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T11:54:07.480088 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T11:54:07.480118 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T11:54:07.480141 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T11:54:07.480163 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T11:54:07.480185 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T11:54:07.480208 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T11:54:07.480235 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T11:54:07.480257 #5212] FATAL -- : [4114bd20-f88b-411d-8d99-c4f97c563814] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T11:54:07.482405 #5212]  INFO -- : [853ad175-1c2d-409a-a515-aa34538385bc] Started GET "/javascripts/application.js" for 127.0.0.1 at 2016-08-28 11:54:07 +0200
+F, [2016-08-28T11:54:07.483803 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc]   
+F, [2016-08-28T11:54:07.483950 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+F, [2016-08-28T11:54:07.484046 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc]   
+F, [2016-08-28T11:54:07.484122 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T11:54:07.484187 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T11:54:07.484245 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T11:54:07.484306 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T11:54:07.484375 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T11:54:07.484449 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T11:54:07.484514 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T11:54:07.484568 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T11:54:07.484623 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T11:54:07.484682 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T11:54:07.484735 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T11:54:07.484850 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T11:54:07.484919 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T11:54:07.484978 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T11:54:07.485036 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T11:54:07.485090 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T11:54:07.485144 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T11:54:07.485200 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T11:54:07.485250 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T11:54:07.485356 #5212] FATAL -- : [853ad175-1c2d-409a-a515-aa34538385bc] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T11:54:14.163405 #5279]  INFO -- : [b57ea476-dfd2-4f81-9d5d-484301b6cc30] Started GET "/" for 127.0.0.1 at 2016-08-28 11:54:14 +0200
+I, [2016-08-28T11:54:14.168841 #5279]  INFO -- : [b57ea476-dfd2-4f81-9d5d-484301b6cc30] Processing by PostController#new as HTML
+I, [2016-08-28T11:54:14.185296 #5279]  INFO -- : [b57ea476-dfd2-4f81-9d5d-484301b6cc30]   Rendering post/new.html.slim within layouts/application
+I, [2016-08-28T11:54:14.216683 #5279]  INFO -- : [b57ea476-dfd2-4f81-9d5d-484301b6cc30]   Rendered post/_header.html.slim (11.6ms)
+D, [2016-08-28T11:54:14.222024 #5279] DEBUG -- : [b57ea476-dfd2-4f81-9d5d-484301b6cc30]   [1m[35m (0.7ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T11:54:14.223333 #5279] DEBUG -- : [b57ea476-dfd2-4f81-9d5d-484301b6cc30]   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T11:54:14.235196 #5279] DEBUG -- : [b57ea476-dfd2-4f81-9d5d-484301b6cc30]   [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+I, [2016-08-28T11:54:14.235667 #5279]  INFO -- : [b57ea476-dfd2-4f81-9d5d-484301b6cc30]   Rendered post/_posts_list.html.slim (11.4ms)
+I, [2016-08-28T11:54:14.248144 #5279]  INFO -- : [b57ea476-dfd2-4f81-9d5d-484301b6cc30]   Rendered post/_post_modal.html.slim (11.6ms)
+I, [2016-08-28T11:54:14.248302 #5279]  INFO -- : [b57ea476-dfd2-4f81-9d5d-484301b6cc30]   Rendered post/new.html.slim within layouts/application (62.9ms)
+I, [2016-08-28T11:54:27.620706 #5279]  INFO -- : [b57ea476-dfd2-4f81-9d5d-484301b6cc30] Completed 200 OK in 13452ms (Views: 13432.7ms | ActiveRecord: 4.7ms)
+I, [2016-08-28T11:54:27.662642 #5279]  INFO -- : [1ab9e752-11fa-433e-b57b-3c6b376b6ce1] Started GET "/assets/application-fab3c824e957dca54127e9fd2d52182433801c287159c04905eb7e254d4f5334.css" for 127.0.0.1 at 2016-08-28 11:54:27 +0200
+I, [2016-08-28T11:54:27.682721 #5279]  INFO -- : [d13abad4-0b04-4eb4-8625-6006ab791674] Started GET "/assets/application-1265e12ae494e990ae108c0e1686af20b3a2301d79ef0cdc05dd82ef88313d86.js" for 127.0.0.1 at 2016-08-28 11:54:27 +0200
+I, [2016-08-28T11:54:33.596857 #5279]  INFO -- : [afa36646-c35c-4e3f-9c99-55df6d7bcd50] Started GET "/users/sign_up" for 127.0.0.1 at 2016-08-28 11:54:33 +0200
+I, [2016-08-28T11:54:33.599060 #5279]  INFO -- : [afa36646-c35c-4e3f-9c99-55df6d7bcd50] Processing by Users::RegistrationsController#new as HTML
+I, [2016-08-28T11:54:33.765410 #5279]  INFO -- : [afa36646-c35c-4e3f-9c99-55df6d7bcd50]   Rendering devise/registrations/new.html.slim within layouts/application
+I, [2016-08-28T11:54:33.907048 #5279]  INFO -- : [afa36646-c35c-4e3f-9c99-55df6d7bcd50]   Rendered devise/shared/_links.html.slim (5.4ms)
+I, [2016-08-28T11:54:33.907204 #5279]  INFO -- : [afa36646-c35c-4e3f-9c99-55df6d7bcd50]   Rendered devise/registrations/new.html.slim within layouts/application (141.6ms)
+I, [2016-08-28T11:54:33.909533 #5279]  INFO -- : [afa36646-c35c-4e3f-9c99-55df6d7bcd50] Completed 200 OK in 310ms (Views: 213.9ms | ActiveRecord: 5.3ms)
+I, [2016-08-28T11:54:44.451616 #5279]  INFO -- : [fad418f5-944e-4503-8807-341e716ef81b] Started POST "/users" for 127.0.0.1 at 2016-08-28 11:54:44 +0200
+I, [2016-08-28T11:54:44.453302 #5279]  INFO -- : [fad418f5-944e-4503-8807-341e716ef81b] Processing by Users::RegistrationsController#create as HTML
+I, [2016-08-28T11:54:44.453460 #5279]  INFO -- : [fad418f5-944e-4503-8807-341e716ef81b]   Parameters: {"utf8"=>"✓", "authenticity_token"=>"pTNpUW3Pm7FC/QYMNdmfGAFhGeK480tI70Deqtw5YuGLwEnERiHuWUz4TPapznbK3lW3f8euyn5Yhzoptt0i6A==", "user"=>{"email"=>"nait.samuel@gmail.com", "username"=>"Tisamu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+D, [2016-08-28T11:54:44.835985 #5279] DEBUG -- : [fad418f5-944e-4503-8807-341e716ef81b]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+D, [2016-08-28T11:54:44.858644 #5279] DEBUG -- : [fad418f5-944e-4503-8807-341e716ef81b]   [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nait.samuel@gmail.com"], ["LIMIT", 1]]
+D, [2016-08-28T11:54:44.861693 #5279] DEBUG -- : [fad418f5-944e-4503-8807-341e716ef81b]   [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "username", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "nait.samuel@gmail.com"], ["encrypted_password", "$2a$11$3o5lBU31Sjj7CPDqd8/u0OovxOQxh2VlDGsGoZn2/YGsShL/BqmnG"], ["username", "Tisamu"], ["confirmation_token", "r_H3TSbDNsWBc67tkUTx"], ["confirmation_sent_at", 2016-08-28 09:54:44 UTC], ["created_at", 2016-08-28 09:54:44 UTC], ["updated_at", 2016-08-28 09:54:44 UTC]]
+D, [2016-08-28T11:54:44.879370 #5279] DEBUG -- : [fad418f5-944e-4503-8807-341e716ef81b]   [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+I, [2016-08-28T11:54:44.921409 #5279]  INFO -- : [fad418f5-944e-4503-8807-341e716ef81b]   Rendering devise/mailer/confirmation_instructions.html.slim
+I, [2016-08-28T11:54:44.926494 #5279]  INFO -- : [fad418f5-944e-4503-8807-341e716ef81b]   Rendered devise/mailer/confirmation_instructions.html.slim (4.9ms)
+D, [2016-08-28T11:54:45.187429 #5279] DEBUG -- : [fad418f5-944e-4503-8807-341e716ef81b] Devise::Mailer#confirmation_instructions: processed outbound mail in 290.6ms
+I, [2016-08-28T11:54:47.062527 #5279]  INFO -- : [fad418f5-944e-4503-8807-341e716ef81b] Sent mail to nait.samuel@gmail.com (1874.8ms)
+D, [2016-08-28T11:54:47.062640 #5279] DEBUG -- : [fad418f5-944e-4503-8807-341e716ef81b] Date: Sun, 28 Aug 2016 11:54:45 +0200
+From: contact@tagger.com
+Reply-To: contact@tagger.com
+To: nait.samuel@gmail.com
+Message-ID: <57c2b4e53271e_149f315de2c185f5@samuel-Lenovo-Z50-70.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome nait.samuel@gmail.com!</p><p>You can confirm your account email through the link below:</p><p><a href="http://simplon-tagger.herokuapp.com/users/confirmation?confirmation_token=r_H3TSbDNsWBc67tkUTx">Confirm my account</a></p>
+I, [2016-08-28T11:54:47.121066 #5279]  INFO -- : [fad418f5-944e-4503-8807-341e716ef81b] Redirected to http://localhost:3000/
+I, [2016-08-28T11:54:47.121365 #5279]  INFO -- : [fad418f5-944e-4503-8807-341e716ef81b] Completed 302 Found in 2668ms (ActiveRecord: 19.0ms)
+I, [2016-08-28T11:54:47.130461 #5279]  INFO -- : [31165075-7f59-4c24-b6a3-c8b4e552a2e7] Started GET "/" for 127.0.0.1 at 2016-08-28 11:54:47 +0200
+I, [2016-08-28T11:54:47.131738 #5279]  INFO -- : [31165075-7f59-4c24-b6a3-c8b4e552a2e7] Processing by PostController#new as HTML
+I, [2016-08-28T11:54:47.134522 #5279]  INFO -- : [31165075-7f59-4c24-b6a3-c8b4e552a2e7]   Rendering post/new.html.slim within layouts/application
+I, [2016-08-28T11:54:47.135433 #5279]  INFO -- : [31165075-7f59-4c24-b6a3-c8b4e552a2e7]   Rendered post/_header.html.slim (0.5ms)
+D, [2016-08-28T11:54:47.136911 #5279] DEBUG -- : [31165075-7f59-4c24-b6a3-c8b4e552a2e7]   [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T11:54:47.137864 #5279] DEBUG -- : [31165075-7f59-4c24-b6a3-c8b4e552a2e7]   [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T11:54:47.138901 #5279] DEBUG -- : [31165075-7f59-4c24-b6a3-c8b4e552a2e7]   [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+I, [2016-08-28T11:54:47.139552 #5279]  INFO -- : [31165075-7f59-4c24-b6a3-c8b4e552a2e7]   Rendered post/_posts_list.html.slim (1.4ms)
+I, [2016-08-28T11:54:47.141055 #5279]  INFO -- : [31165075-7f59-4c24-b6a3-c8b4e552a2e7]   Rendered post/_post_modal.html.slim (1.3ms)
+I, [2016-08-28T11:54:47.141216 #5279]  INFO -- : [31165075-7f59-4c24-b6a3-c8b4e552a2e7]   Rendered post/new.html.slim within layouts/application (6.5ms)
+I, [2016-08-28T11:54:47.144504 #5279]  INFO -- : [31165075-7f59-4c24-b6a3-c8b4e552a2e7] Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 1.1ms)
+I, [2016-08-28T11:56:00.205019 #5279]  INFO -- : [2d17fa86-4564-4d8e-963f-613a637e7be1] Started GET "/users/confirmation?confirmation_token=r_H3TSbDNsWBc67tkUTx" for 127.0.0.1 at 2016-08-28 11:56:00 +0200
+I, [2016-08-28T11:56:00.208799 #5279]  INFO -- : [2d17fa86-4564-4d8e-963f-613a637e7be1] Processing by Devise::ConfirmationsController#show as HTML
+I, [2016-08-28T11:56:00.208952 #5279]  INFO -- : [2d17fa86-4564-4d8e-963f-613a637e7be1]   Parameters: {"confirmation_token"=>"r_H3TSbDNsWBc67tkUTx"}
+D, [2016-08-28T11:56:00.272170 #5279] DEBUG -- : [2d17fa86-4564-4d8e-963f-613a637e7be1]   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["confirmation_token", "r_H3TSbDNsWBc67tkUTx"], ["LIMIT", 1]]
+D, [2016-08-28T11:56:00.274798 #5279] DEBUG -- : [2d17fa86-4564-4d8e-963f-613a637e7be1]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+D, [2016-08-28T11:56:00.279786 #5279] DEBUG -- : [2d17fa86-4564-4d8e-963f-613a637e7be1]   [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["confirmed_at", 2016-08-28 09:56:00 UTC], ["updated_at", 2016-08-28 09:56:00 UTC], ["id", 1]]
+D, [2016-08-28T11:56:00.287920 #5279] DEBUG -- : [2d17fa86-4564-4d8e-963f-613a637e7be1]   [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+I, [2016-08-28T11:56:00.289883 #5279]  INFO -- : [2d17fa86-4564-4d8e-963f-613a637e7be1] Redirected to http://localhost:3000/users/sign_in
+I, [2016-08-28T11:56:00.290106 #5279]  INFO -- : [2d17fa86-4564-4d8e-963f-613a637e7be1] Completed 302 Found in 81ms (ActiveRecord: 9.5ms)
+I, [2016-08-28T11:56:00.309355 #5279]  INFO -- : [afd481e6-2ef1-44b2-a189-38638c180ce1] Started GET "/users/sign_in" for 127.0.0.1 at 2016-08-28 11:56:00 +0200
+I, [2016-08-28T11:56:00.311821 #5279]  INFO -- : [afd481e6-2ef1-44b2-a189-38638c180ce1] Processing by Devise::SessionsController#new as HTML
+I, [2016-08-28T11:56:00.358903 #5279]  INFO -- : [afd481e6-2ef1-44b2-a189-38638c180ce1]   Rendering devise/sessions/new.html.slim within layouts/application
+I, [2016-08-28T11:56:00.374361 #5279]  INFO -- : [afd481e6-2ef1-44b2-a189-38638c180ce1]   Rendered devise/shared/_links.html.slim (1.3ms)
+I, [2016-08-28T11:56:00.374512 #5279]  INFO -- : [afd481e6-2ef1-44b2-a189-38638c180ce1]   Rendered devise/sessions/new.html.slim within layouts/application (15.1ms)
+I, [2016-08-28T11:56:00.378396 #5279]  INFO -- : [afd481e6-2ef1-44b2-a189-38638c180ce1] Completed 200 OK in 66ms (Views: 64.5ms | ActiveRecord: 0.0ms)
+I, [2016-08-28T11:56:11.088920 #5279]  INFO -- : [0c7a1eff-fb05-446f-aff0-9d61a0fa2578] Started POST "/users/sign_in" for 127.0.0.1 at 2016-08-28 11:56:11 +0200
+I, [2016-08-28T11:56:11.091438 #5279]  INFO -- : [0c7a1eff-fb05-446f-aff0-9d61a0fa2578] Processing by Devise::SessionsController#create as HTML
+I, [2016-08-28T11:56:11.091708 #5279]  INFO -- : [0c7a1eff-fb05-446f-aff0-9d61a0fa2578]   Parameters: {"utf8"=>"✓", "authenticity_token"=>"gzKbUnxBsqLWev+wezxo4/tBlOdPj/jb2qChu2WIB0Zis5grDj91NYDDKeM9010FHqAM0+wxqeQhB9ToIJ4d3Q==", "user"=>{"email"=>"nait.samuel@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+D, [2016-08-28T11:56:11.096590 #5279] DEBUG -- : [0c7a1eff-fb05-446f-aff0-9d61a0fa2578]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "nait.samuel@gmail.com"], ["LIMIT", 1]]
+D, [2016-08-28T11:56:11.352848 #5279] DEBUG -- : [0c7a1eff-fb05-446f-aff0-9d61a0fa2578]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+D, [2016-08-28T11:56:11.356753 #5279] DEBUG -- : [0c7a1eff-fb05-446f-aff0-9d61a0fa2578]   [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["current_sign_in_at", 2016-08-28 09:56:11 UTC], ["last_sign_in_at", 2016-08-28 09:56:11 UTC], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", 2016-08-28 09:56:11 UTC], ["id", 1]]
+D, [2016-08-28T11:56:11.380028 #5279] DEBUG -- : [0c7a1eff-fb05-446f-aff0-9d61a0fa2578]   [1m[35m (21.9ms)[0m  [1m[35mCOMMIT[0m
+I, [2016-08-28T11:56:11.404888 #5279]  INFO -- : [0c7a1eff-fb05-446f-aff0-9d61a0fa2578] Redirected to http://localhost:3000/
+I, [2016-08-28T11:56:11.405133 #5279]  INFO -- : [0c7a1eff-fb05-446f-aff0-9d61a0fa2578] Completed 302 Found in 313ms (ActiveRecord: 23.5ms)
+I, [2016-08-28T11:56:11.421987 #5279]  INFO -- : [f2b9d5bd-33fe-4b5f-a50b-5094401805af] Started GET "/" for 127.0.0.1 at 2016-08-28 11:56:11 +0200
+I, [2016-08-28T11:56:11.422807 #5279]  INFO -- : [f2b9d5bd-33fe-4b5f-a50b-5094401805af] Processing by PostController#new as HTML
+I, [2016-08-28T11:56:11.424706 #5279]  INFO -- : [f2b9d5bd-33fe-4b5f-a50b-5094401805af]   Rendering post/new.html.slim within layouts/application
+D, [2016-08-28T11:56:11.426983 #5279] DEBUG -- : [f2b9d5bd-33fe-4b5f-a50b-5094401805af]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T11:56:11.463733 #5279] DEBUG -- : [f2b9d5bd-33fe-4b5f-a50b-5094401805af]   [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+I, [2016-08-28T11:56:11.464067 #5279]  INFO -- : [f2b9d5bd-33fe-4b5f-a50b-5094401805af]   Rendered post/_header.html.slim (39.1ms)
+D, [2016-08-28T11:56:11.464826 #5279] DEBUG -- : [f2b9d5bd-33fe-4b5f-a50b-5094401805af]   [1m[35m (0.3ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T11:56:11.466206 #5279] DEBUG -- : [f2b9d5bd-33fe-4b5f-a50b-5094401805af]   [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T11:56:11.467348 #5279] DEBUG -- : [f2b9d5bd-33fe-4b5f-a50b-5094401805af]   [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+I, [2016-08-28T11:56:11.467661 #5279]  INFO -- : [f2b9d5bd-33fe-4b5f-a50b-5094401805af]   Rendered post/_posts_list.html.slim (1.2ms)
+I, [2016-08-28T11:56:11.469754 #5279]  INFO -- : [f2b9d5bd-33fe-4b5f-a50b-5094401805af]   Rendered post/_post_modal.html.slim (1.4ms)
+I, [2016-08-28T11:56:11.469875 #5279]  INFO -- : [f2b9d5bd-33fe-4b5f-a50b-5094401805af]   Rendered post/new.html.slim within layouts/application (45.1ms)
+I, [2016-08-28T11:56:11.473603 #5279]  INFO -- : [f2b9d5bd-33fe-4b5f-a50b-5094401805af] Completed 200 OK in 51ms (Views: 46.8ms | ActiveRecord: 2.4ms)
+I, [2016-08-28T11:56:15.950066 #5279]  INFO -- : [b4524389-9876-48bc-b72c-4c488cf296a7] Started GET "/users/edit" for 127.0.0.1 at 2016-08-28 11:56:15 +0200
+I, [2016-08-28T11:56:15.951799 #5279]  INFO -- : [b4524389-9876-48bc-b72c-4c488cf296a7] Processing by Users::RegistrationsController#edit as HTML
+D, [2016-08-28T11:56:15.954278 #5279] DEBUG -- : [b4524389-9876-48bc-b72c-4c488cf296a7]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2016-08-28T11:56:16.026874 #5279]  INFO -- : [b4524389-9876-48bc-b72c-4c488cf296a7]   Rendering devise/registrations/edit.html.slim within layouts/application
+I, [2016-08-28T11:56:16.049732 #5279]  INFO -- : [b4524389-9876-48bc-b72c-4c488cf296a7]   Rendered devise/registrations/edit.html.slim within layouts/application (22.7ms)
+I, [2016-08-28T11:56:16.053570 #5279]  INFO -- : [b4524389-9876-48bc-b72c-4c488cf296a7] Completed 200 OK in 102ms (Views: 98.0ms | ActiveRecord: 0.6ms)
+I, [2016-08-28T11:56:30.027518 #5279]  INFO -- : [a20ce03f-910d-475b-a90c-d1d2a9242a34] Started PUT "/users" for 127.0.0.1 at 2016-08-28 11:56:30 +0200
+I, [2016-08-28T11:56:30.029118 #5279]  INFO -- : [a20ce03f-910d-475b-a90c-d1d2a9242a34] Processing by Users::RegistrationsController#update as HTML
+I, [2016-08-28T11:56:30.029276 #5279]  INFO -- : [a20ce03f-910d-475b-a90c-d1d2a9242a34]   Parameters: {"utf8"=>"✓", "authenticity_token"=>"WemBpd5TXeqglWFbGymv8UCOaZqW9jWqaCne6hUEHEniZw9fcKAFAY5AOFXuMYRQk8sqlXnKcLlM1MPTRP1xDw==", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007ffb8f6122a8 @tempfile=#<Tempfile:/tmp/RackMultipart20160828-5279-e7lioc.png>, @original_filename="ruby_gem.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"ruby_gem.png\"\r\nContent-Type: image/png\r\n">, "avatar_cache"=>"", "email"=>"nait.samuel@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Mettre à jour"}
+D, [2016-08-28T11:56:30.031121 #5279] DEBUG -- : [a20ce03f-910d-475b-a90c-d1d2a9242a34]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T11:56:30.034517 #5279] DEBUG -- : [a20ce03f-910d-475b-a90c-d1d2a9242a34]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T11:56:30.036292 #5279] DEBUG -- : [a20ce03f-910d-475b-a90c-d1d2a9242a34]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+D, [2016-08-28T11:56:30.505500 #5279] DEBUG -- : [a20ce03f-910d-475b-a90c-d1d2a9242a34]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T11:56:30.507906 #5279] DEBUG -- : [a20ce03f-910d-475b-a90c-d1d2a9242a34]   [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "avatar" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["avatar", "ruby_gem.png"], ["updated_at", 2016-08-28 09:56:30 UTC], ["id", 1]]
+D, [2016-08-28T11:56:30.531100 #5279] DEBUG -- : [a20ce03f-910d-475b-a90c-d1d2a9242a34]   [1m[35m (21.0ms)[0m  [1m[35mCOMMIT[0m
+I, [2016-08-28T11:56:30.536226 #5279]  INFO -- : [a20ce03f-910d-475b-a90c-d1d2a9242a34] Redirected to http://localhost:3000/
+I, [2016-08-28T11:56:30.536438 #5279]  INFO -- : [a20ce03f-910d-475b-a90c-d1d2a9242a34] Completed 302 Found in 507ms (ActiveRecord: 22.8ms)
+I, [2016-08-28T11:56:30.551716 #5279]  INFO -- : [d00e8c30-d637-4f18-ad15-861574b75e55] Started GET "/" for 127.0.0.1 at 2016-08-28 11:56:30 +0200
+I, [2016-08-28T11:56:30.552590 #5279]  INFO -- : [d00e8c30-d637-4f18-ad15-861574b75e55] Processing by PostController#new as HTML
+I, [2016-08-28T11:56:30.554037 #5279]  INFO -- : [d00e8c30-d637-4f18-ad15-861574b75e55]   Rendering post/new.html.slim within layouts/application
+D, [2016-08-28T11:56:30.555778 #5279] DEBUG -- : [d00e8c30-d637-4f18-ad15-861574b75e55]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T11:56:30.558685 #5279] DEBUG -- : [d00e8c30-d637-4f18-ad15-861574b75e55]   [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+I, [2016-08-28T11:56:30.559070 #5279]  INFO -- : [d00e8c30-d637-4f18-ad15-861574b75e55]   Rendered post/_header.html.slim (4.7ms)
+D, [2016-08-28T11:56:30.559885 #5279] DEBUG -- : [d00e8c30-d637-4f18-ad15-861574b75e55]   [1m[35m (0.3ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T11:56:30.560737 #5279] DEBUG -- : [d00e8c30-d637-4f18-ad15-861574b75e55]   [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T11:56:30.561724 #5279] DEBUG -- : [d00e8c30-d637-4f18-ad15-861574b75e55]   [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+I, [2016-08-28T11:56:30.562028 #5279]  INFO -- : [d00e8c30-d637-4f18-ad15-861574b75e55]   Rendered post/_posts_list.html.slim (1.0ms)
+I, [2016-08-28T11:56:30.563241 #5279]  INFO -- : [d00e8c30-d637-4f18-ad15-861574b75e55]   Rendered post/_post_modal.html.slim (1.0ms)
+I, [2016-08-28T11:56:30.563385 #5279]  INFO -- : [d00e8c30-d637-4f18-ad15-861574b75e55]   Rendered post/new.html.slim within layouts/application (9.2ms)
+I, [2016-08-28T11:56:30.565784 #5279]  INFO -- : [d00e8c30-d637-4f18-ad15-861574b75e55] Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 1.8ms)
+I, [2016-08-28T11:56:30.613245 #5279]  INFO -- : [1292323a-1330-4d04-a296-b4e57b47939a] Started GET "/uploads/user/avatar/1/ruby_gem.png" for 127.0.0.1 at 2016-08-28 11:56:30 +0200
+F, [2016-08-28T11:56:30.614197 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a]   
+F, [2016-08-28T11:56:30.614294 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] ActionController::RoutingError (No route matches [GET] "/uploads/user/avatar/1/ruby_gem.png"):
+F, [2016-08-28T11:56:30.614370 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a]   
+F, [2016-08-28T11:56:30.614429 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T11:56:30.614481 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T11:56:30.614532 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T11:56:30.614580 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T11:56:30.614636 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T11:56:30.614716 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T11:56:30.614764 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T11:56:30.614822 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T11:56:30.614870 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T11:56:30.614926 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T11:56:30.614972 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T11:56:30.615053 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T11:56:30.615105 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T11:56:30.615153 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T11:56:30.615207 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T11:56:30.615253 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T11:56:30.615299 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T11:56:30.615345 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T11:56:30.615390 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T11:56:30.615442 #5279] FATAL -- : [1292323a-1330-4d04-a296-b4e57b47939a] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T11:56:30.726012 #5279]  INFO -- : [ad8300c4-5b46-4153-be4a-b8944878efda] Started GET "/uploads/user/avatar/1/ruby_gem.png" for 127.0.0.1 at 2016-08-28 11:56:30 +0200
+F, [2016-08-28T11:56:30.726841 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda]   
+F, [2016-08-28T11:56:30.726923 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] ActionController::RoutingError (No route matches [GET] "/uploads/user/avatar/1/ruby_gem.png"):
+F, [2016-08-28T11:56:30.726982 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda]   
+F, [2016-08-28T11:56:30.727069 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T11:56:30.727124 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T11:56:30.727176 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T11:56:30.727234 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T11:56:30.727284 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T11:56:30.727332 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T11:56:30.727379 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T11:56:30.727426 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T11:56:30.727478 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T11:56:30.727526 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T11:56:30.727583 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T11:56:30.727632 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T11:56:30.727680 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T11:56:30.727733 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T11:56:30.727780 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T11:56:30.727827 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T11:56:30.727873 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T11:56:30.727920 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T11:56:30.727974 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T11:56:30.728023 #5279] FATAL -- : [ad8300c4-5b46-4153-be4a-b8944878efda] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T11:57:33.230817 #5279]  INFO -- : [5977f4f5-ed45-4947-ac5e-1149299b4712] Started GET "/" for 127.0.0.1 at 2016-08-28 11:57:33 +0200
+I, [2016-08-28T11:57:33.231698 #5279]  INFO -- : [5977f4f5-ed45-4947-ac5e-1149299b4712] Processing by PostController#new as HTML
+I, [2016-08-28T11:57:33.233457 #5279]  INFO -- : [5977f4f5-ed45-4947-ac5e-1149299b4712]   Rendering post/new.html.slim within layouts/application
+D, [2016-08-28T11:57:33.235918 #5279] DEBUG -- : [5977f4f5-ed45-4947-ac5e-1149299b4712]   [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T11:57:33.239915 #5279] DEBUG -- : [5977f4f5-ed45-4947-ac5e-1149299b4712]   [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+I, [2016-08-28T11:57:33.240295 #5279]  INFO -- : [5977f4f5-ed45-4947-ac5e-1149299b4712]   Rendered post/_header.html.slim (6.5ms)
+D, [2016-08-28T11:57:33.241136 #5279] DEBUG -- : [5977f4f5-ed45-4947-ac5e-1149299b4712]   [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T11:57:33.242101 #5279] DEBUG -- : [5977f4f5-ed45-4947-ac5e-1149299b4712]   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T11:57:33.243394 #5279] DEBUG -- : [5977f4f5-ed45-4947-ac5e-1149299b4712]   [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+I, [2016-08-28T11:57:33.243847 #5279]  INFO -- : [5977f4f5-ed45-4947-ac5e-1149299b4712]   Rendered post/_posts_list.html.slim (1.4ms)
+I, [2016-08-28T11:57:33.245303 #5279]  INFO -- : [5977f4f5-ed45-4947-ac5e-1149299b4712]   Rendered post/_post_modal.html.slim (1.1ms)
+I, [2016-08-28T11:57:33.245482 #5279]  INFO -- : [5977f4f5-ed45-4947-ac5e-1149299b4712]   Rendered post/new.html.slim within layouts/application (11.9ms)
+I, [2016-08-28T11:57:33.247806 #5279]  INFO -- : [5977f4f5-ed45-4947-ac5e-1149299b4712] Completed 200 OK in 16ms (Views: 11.7ms | ActiveRecord: 2.9ms)
+I, [2016-08-28T11:57:33.300558 #5279]  INFO -- : [5de965f9-2c99-4ba9-8e2c-0de62f1ca2de] Started GET "/assets/application-fab3c824e957dca54127e9fd2d52182433801c287159c04905eb7e254d4f5334.css" for 127.0.0.1 at 2016-08-28 11:57:33 +0200
+I, [2016-08-28T11:57:33.333177 #5279]  INFO -- : [587458b9-ca4f-4cb9-aee8-855f924afef2] Started GET "/assets/application-1265e12ae494e990ae108c0e1686af20b3a2301d79ef0cdc05dd82ef88313d86.js" for 127.0.0.1 at 2016-08-28 11:57:33 +0200
+I, [2016-08-28T11:57:33.376384 #5279]  INFO -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] Started GET "/uploads/user/avatar/1/ruby_gem.png" for 127.0.0.1 at 2016-08-28 11:57:33 +0200
+F, [2016-08-28T11:57:33.377346 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5]   
+F, [2016-08-28T11:57:33.377437 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] ActionController::RoutingError (No route matches [GET] "/uploads/user/avatar/1/ruby_gem.png"):
+F, [2016-08-28T11:57:33.377503 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5]   
+F, [2016-08-28T11:57:33.377578 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T11:57:33.377647 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T11:57:33.377697 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T11:57:33.377741 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T11:57:33.377787 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T11:57:33.377816 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T11:57:33.377847 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T11:57:33.377871 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T11:57:33.377893 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T11:57:33.377915 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T11:57:33.377937 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T11:57:33.377968 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T11:57:33.377991 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T11:57:33.378013 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T11:57:33.378034 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T11:57:33.378055 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T11:57:33.378082 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T11:57:33.378105 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T11:57:33.378126 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T11:57:33.378147 #5279] FATAL -- : [2062b265-45f6-4d4b-84f1-3e67eb5d0af5] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T11:59:07.030999 #5279]  INFO -- : [05c4ef00-3035-4dbf-ba54-bf40562b2213] Started GET "/users/edit" for 127.0.0.1 at 2016-08-28 11:59:07 +0200
+I, [2016-08-28T11:59:07.032098 #5279]  INFO -- : [05c4ef00-3035-4dbf-ba54-bf40562b2213] Processing by Users::RegistrationsController#edit as HTML
+D, [2016-08-28T11:59:07.034267 #5279] DEBUG -- : [05c4ef00-3035-4dbf-ba54-bf40562b2213]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2016-08-28T11:59:07.036169 #5279]  INFO -- : [05c4ef00-3035-4dbf-ba54-bf40562b2213]   Rendering devise/registrations/edit.html.slim within layouts/application
+I, [2016-08-28T11:59:07.040089 #5279]  INFO -- : [05c4ef00-3035-4dbf-ba54-bf40562b2213]   Rendered devise/registrations/edit.html.slim within layouts/application (3.7ms)
+I, [2016-08-28T11:59:07.042753 #5279]  INFO -- : [05c4ef00-3035-4dbf-ba54-bf40562b2213] Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.6ms)
+I, [2016-08-28T11:59:07.061005 #5279]  INFO -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] Started GET "/uploads/user/avatar/1/ruby_gem.png" for 127.0.0.1 at 2016-08-28 11:59:07 +0200
+F, [2016-08-28T11:59:07.061920 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64]   
+F, [2016-08-28T11:59:07.062006 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] ActionController::RoutingError (No route matches [GET] "/uploads/user/avatar/1/ruby_gem.png"):
+F, [2016-08-28T11:59:07.062076 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64]   
+F, [2016-08-28T11:59:07.062131 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T11:59:07.062183 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T11:59:07.062241 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T11:59:07.062292 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T11:59:07.062340 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T11:59:07.062387 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T11:59:07.062433 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T11:59:07.062486 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T11:59:07.062534 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T11:59:07.062580 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T11:59:07.062625 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T11:59:07.062670 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T11:59:07.062721 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T11:59:07.062768 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T11:59:07.062813 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T11:59:07.062857 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T11:59:07.062903 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T11:59:07.062954 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T11:59:07.063025 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T11:59:07.063093 #5279] FATAL -- : [07c9f99a-483d-425e-b9e1-2e8a9f4d8a64] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T11:59:12.165219 #5279]  INFO -- : [ba8ad074-19b7-43c9-984d-1a69c1b4c92f] Started PUT "/users" for 127.0.0.1 at 2016-08-28 11:59:12 +0200
+I, [2016-08-28T11:59:12.166236 #5279]  INFO -- : [ba8ad074-19b7-43c9-984d-1a69c1b4c92f] Processing by Users::RegistrationsController#update as HTML
+I, [2016-08-28T11:59:12.166396 #5279]  INFO -- : [ba8ad074-19b7-43c9-984d-1a69c1b4c92f]   Parameters: {"utf8"=>"✓", "authenticity_token"=>"k3J43voRGZ+WG7RpC8jETqkOitlEf930ClyivwvuZUgo/PYkVOJBdLjO7Wf+0O/vekvJ1qtDmOcuob+GWhcIDg==", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007ffb8f2c9038 @tempfile=#<Tempfile:/tmp/RackMultipart20160828-5279-1t3ce48.png>, @original_filename="ruby_gem.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"ruby_gem.png\"\r\nContent-Type: image/png\r\n">, "avatar_cache"=>"", "email"=>"nait.samuel@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Mettre à jour"}
+D, [2016-08-28T11:59:12.168175 #5279] DEBUG -- : [ba8ad074-19b7-43c9-984d-1a69c1b4c92f]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T11:59:12.170962 #5279] DEBUG -- : [ba8ad074-19b7-43c9-984d-1a69c1b4c92f]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T11:59:12.172231 #5279] DEBUG -- : [ba8ad074-19b7-43c9-984d-1a69c1b4c92f]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+D, [2016-08-28T11:59:12.219987 #5279] DEBUG -- : [ba8ad074-19b7-43c9-984d-1a69c1b4c92f]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T11:59:12.221950 #5279] DEBUG -- : [ba8ad074-19b7-43c9-984d-1a69c1b4c92f]   [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "avatar" = $2 WHERE "users"."id" = $3[0m  [["updated_at", 2016-08-28 09:59:12 UTC], ["avatar", "ruby_gem.png"], ["id", 1]]
+D, [2016-08-28T11:59:12.274255 #5279] DEBUG -- : [ba8ad074-19b7-43c9-984d-1a69c1b4c92f]   [1m[35m (50.2ms)[0m  [1m[35mCOMMIT[0m
+I, [2016-08-28T11:59:12.276183 #5279]  INFO -- : [ba8ad074-19b7-43c9-984d-1a69c1b4c92f] Redirected to http://localhost:3000/
+I, [2016-08-28T11:59:12.276399 #5279]  INFO -- : [ba8ad074-19b7-43c9-984d-1a69c1b4c92f] Completed 302 Found in 110ms (ActiveRecord: 52.0ms)
+I, [2016-08-28T11:59:12.284562 #5279]  INFO -- : [2323b61b-5e1f-4ace-899c-2ad4f1d3e8c5] Started GET "/" for 127.0.0.1 at 2016-08-28 11:59:12 +0200
+I, [2016-08-28T11:59:12.285385 #5279]  INFO -- : [2323b61b-5e1f-4ace-899c-2ad4f1d3e8c5] Processing by PostController#new as HTML
+I, [2016-08-28T11:59:12.286640 #5279]  INFO -- : [2323b61b-5e1f-4ace-899c-2ad4f1d3e8c5]   Rendering post/new.html.slim within layouts/application
+D, [2016-08-28T11:59:12.288117 #5279] DEBUG -- : [2323b61b-5e1f-4ace-899c-2ad4f1d3e8c5]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T11:59:12.290753 #5279] DEBUG -- : [2323b61b-5e1f-4ace-899c-2ad4f1d3e8c5]   [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+I, [2016-08-28T11:59:12.291072 #5279]  INFO -- : [2323b61b-5e1f-4ace-899c-2ad4f1d3e8c5]   Rendered post/_header.html.slim (4.2ms)
+D, [2016-08-28T11:59:12.291870 #5279] DEBUG -- : [2323b61b-5e1f-4ace-899c-2ad4f1d3e8c5]   [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T11:59:12.292762 #5279] DEBUG -- : [2323b61b-5e1f-4ace-899c-2ad4f1d3e8c5]   [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T11:59:12.293792 #5279] DEBUG -- : [2323b61b-5e1f-4ace-899c-2ad4f1d3e8c5]   [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+I, [2016-08-28T11:59:12.294103 #5279]  INFO -- : [2323b61b-5e1f-4ace-899c-2ad4f1d3e8c5]   Rendered post/_posts_list.html.slim (1.0ms)
+I, [2016-08-28T11:59:12.295249 #5279]  INFO -- : [2323b61b-5e1f-4ace-899c-2ad4f1d3e8c5]   Rendered post/_post_modal.html.slim (0.9ms)
+I, [2016-08-28T11:59:12.295377 #5279]  INFO -- : [2323b61b-5e1f-4ace-899c-2ad4f1d3e8c5]   Rendered post/new.html.slim within layouts/application (8.6ms)
+I, [2016-08-28T11:59:12.298109 #5279]  INFO -- : [2323b61b-5e1f-4ace-899c-2ad4f1d3e8c5] Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 1.9ms)
+I, [2016-08-28T11:59:12.338411 #5279]  INFO -- : [f613e201-3270-414f-9dba-bb0b00537a71] Started GET "/uploads/user/avatar/1/ruby_gem.png" for 127.0.0.1 at 2016-08-28 11:59:12 +0200
+F, [2016-08-28T11:59:12.339382 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71]   
+F, [2016-08-28T11:59:12.339471 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] ActionController::RoutingError (No route matches [GET] "/uploads/user/avatar/1/ruby_gem.png"):
+F, [2016-08-28T11:59:12.339509 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71]   
+F, [2016-08-28T11:59:12.339541 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T11:59:12.339569 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T11:59:12.339593 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T11:59:12.339714 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T11:59:12.339745 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T11:59:12.339771 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T11:59:12.339797 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T11:59:12.339823 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T11:59:12.339848 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T11:59:12.339871 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T11:59:12.339895 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T11:59:12.339919 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T11:59:12.339947 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T11:59:12.339972 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T11:59:12.339996 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T11:59:12.340032 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T11:59:12.340057 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T11:59:12.340082 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T11:59:12.340125 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T11:59:12.340153 #5279] FATAL -- : [f613e201-3270-414f-9dba-bb0b00537a71] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T11:59:12.454226 #5279]  INFO -- : [76700322-c881-493f-99e9-27f382b3c8cd] Started GET "/uploads/user/avatar/1/ruby_gem.png" for 127.0.0.1 at 2016-08-28 11:59:12 +0200
+F, [2016-08-28T11:59:12.455229 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd]   
+F, [2016-08-28T11:59:12.455326 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] ActionController::RoutingError (No route matches [GET] "/uploads/user/avatar/1/ruby_gem.png"):
+F, [2016-08-28T11:59:12.455398 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd]   
+F, [2016-08-28T11:59:12.455456 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T11:59:12.455509 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T11:59:12.455560 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T11:59:12.455609 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T11:59:12.455663 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T11:59:12.455712 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T11:59:12.455760 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T11:59:12.455807 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T11:59:12.455853 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T11:59:12.455899 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T11:59:12.455945 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T11:59:12.455991 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T11:59:12.456037 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T11:59:12.456084 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T11:59:12.456135 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T11:59:12.456189 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T11:59:12.456242 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T11:59:12.456296 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T11:59:12.456344 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T11:59:12.456391 #5279] FATAL -- : [76700322-c881-493f-99e9-27f382b3c8cd] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T12:01:07.975754 #5279]  INFO -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] Started GET "/ezdzed" for 127.0.0.1 at 2016-08-28 12:01:07 +0200
+F, [2016-08-28T12:01:07.977303 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f]   
+F, [2016-08-28T12:01:07.977457 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] ActionController::RoutingError (No route matches [GET] "/ezdzed"):
+F, [2016-08-28T12:01:07.977546 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f]   
+F, [2016-08-28T12:01:07.977615 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T12:01:07.977673 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T12:01:07.977719 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T12:01:07.977762 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T12:01:07.977812 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T12:01:07.977870 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T12:01:07.978025 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T12:01:07.978172 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T12:01:07.978324 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T12:01:07.978479 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T12:01:07.978801 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T12:01:07.978956 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T12:01:07.979125 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T12:01:07.979278 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T12:01:07.979425 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T12:01:07.979527 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T12:01:07.979608 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T12:01:07.979668 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T12:01:07.979717 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T12:01:07.979759 #5279] FATAL -- : [90bef755-12fe-42b8-8d24-22fe75788f5f] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T12:01:14.238660 #5279]  INFO -- : [d0891383-b78d-4db6-bc68-29d06d3044b2] Started GET "/" for 127.0.0.1 at 2016-08-28 12:01:14 +0200
+I, [2016-08-28T12:01:14.239700 #5279]  INFO -- : [d0891383-b78d-4db6-bc68-29d06d3044b2] Processing by PostController#new as HTML
+I, [2016-08-28T12:01:14.241280 #5279]  INFO -- : [d0891383-b78d-4db6-bc68-29d06d3044b2]   Rendering post/new.html.slim within layouts/application
+D, [2016-08-28T12:01:14.243252 #5279] DEBUG -- : [d0891383-b78d-4db6-bc68-29d06d3044b2]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T12:01:14.246662 #5279] DEBUG -- : [d0891383-b78d-4db6-bc68-29d06d3044b2]   [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+I, [2016-08-28T12:01:14.247065 #5279]  INFO -- : [d0891383-b78d-4db6-bc68-29d06d3044b2]   Rendered post/_header.html.slim (5.3ms)
+D, [2016-08-28T12:01:14.248025 #5279] DEBUG -- : [d0891383-b78d-4db6-bc68-29d06d3044b2]   [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T12:01:14.249231 #5279] DEBUG -- : [d0891383-b78d-4db6-bc68-29d06d3044b2]   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T12:01:14.250454 #5279] DEBUG -- : [d0891383-b78d-4db6-bc68-29d06d3044b2]   [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+I, [2016-08-28T12:01:14.251036 #5279]  INFO -- : [d0891383-b78d-4db6-bc68-29d06d3044b2]   Rendered post/_posts_list.html.slim (1.4ms)
+I, [2016-08-28T12:01:14.252500 #5279]  INFO -- : [d0891383-b78d-4db6-bc68-29d06d3044b2]   Rendered post/_post_modal.html.slim (1.1ms)
+I, [2016-08-28T12:01:14.252697 #5279]  INFO -- : [d0891383-b78d-4db6-bc68-29d06d3044b2]   Rendered post/new.html.slim within layouts/application (11.1ms)
+I, [2016-08-28T12:01:14.255548 #5279]  INFO -- : [d0891383-b78d-4db6-bc68-29d06d3044b2] Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 2.1ms)
+I, [2016-08-28T12:01:14.297789 #5279]  INFO -- : [50a2c29e-4b37-4be0-90f2-3f99a7e18346] Started GET "/assets/application-fab3c824e957dca54127e9fd2d52182433801c287159c04905eb7e254d4f5334.css" for 127.0.0.1 at 2016-08-28 12:01:14 +0200
+I, [2016-08-28T12:01:14.314438 #5279]  INFO -- : [ca3c4681-840d-4863-a8f9-87860a7a6389] Started GET "/assets/application-1265e12ae494e990ae108c0e1686af20b3a2301d79ef0cdc05dd82ef88313d86.js" for 127.0.0.1 at 2016-08-28 12:01:14 +0200
+I, [2016-08-28T12:01:14.320813 #5279]  INFO -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] Started GET "/uploads/user/avatar/1/ruby_gem.png" for 127.0.0.1 at 2016-08-28 12:01:14 +0200
+F, [2016-08-28T12:01:14.322409 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c]   
+F, [2016-08-28T12:01:14.322622 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] ActionController::RoutingError (No route matches [GET] "/uploads/user/avatar/1/ruby_gem.png"):
+F, [2016-08-28T12:01:14.322785 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c]   
+F, [2016-08-28T12:01:14.322938 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T12:01:14.323109 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T12:01:14.323263 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T12:01:14.323417 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T12:01:14.323571 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T12:01:14.323722 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T12:01:14.323871 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T12:01:14.324019 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T12:01:14.324168 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T12:01:14.324317 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T12:01:14.324404 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T12:01:14.324467 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T12:01:14.324526 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T12:01:14.324570 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T12:01:14.324801 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T12:01:14.324851 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T12:01:14.324895 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T12:01:14.324940 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T12:01:14.324991 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T12:01:14.325047 #5279] FATAL -- : [2b392fb6-a8d2-4ce8-9942-93dcd559c95c] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T12:01:14.410579 #5279]  INFO -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] Started GET "/uploads/user/avatar/1/ruby_gem.png" for 127.0.0.1 at 2016-08-28 12:01:14 +0200
+F, [2016-08-28T12:01:14.411608 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca]   
+F, [2016-08-28T12:01:14.411698 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] ActionController::RoutingError (No route matches [GET] "/uploads/user/avatar/1/ruby_gem.png"):
+F, [2016-08-28T12:01:14.411770 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca]   
+F, [2016-08-28T12:01:14.411829 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T12:01:14.411881 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T12:01:14.411931 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T12:01:14.412094 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T12:01:14.412151 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T12:01:14.412202 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T12:01:14.412249 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T12:01:14.412295 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T12:01:14.412341 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T12:01:14.412392 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T12:01:14.412438 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T12:01:14.412483 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T12:01:14.412529 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T12:01:14.412585 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T12:01:14.412639 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T12:01:14.412686 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T12:01:14.412730 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T12:01:14.412775 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T12:01:14.412819 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T12:01:14.412864 #5279] FATAL -- : [152d4728-521e-4fab-9804-5e4009b0f4ca] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T12:01:15.046649 #5279]  INFO -- : [608ebb93-1ee2-4c73-90d5-208226814180] Started GET "/" for 127.0.0.1 at 2016-08-28 12:01:15 +0200
+I, [2016-08-28T12:01:15.048340 #5279]  INFO -- : [608ebb93-1ee2-4c73-90d5-208226814180] Processing by PostController#new as HTML
+I, [2016-08-28T12:01:15.051843 #5279]  INFO -- : [608ebb93-1ee2-4c73-90d5-208226814180]   Rendering post/new.html.slim within layouts/application
+D, [2016-08-28T12:01:15.055214 #5279] DEBUG -- : [608ebb93-1ee2-4c73-90d5-208226814180]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T12:01:15.060792 #5279] DEBUG -- : [608ebb93-1ee2-4c73-90d5-208226814180]   [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+I, [2016-08-28T12:01:15.061247 #5279]  INFO -- : [608ebb93-1ee2-4c73-90d5-208226814180]   Rendered post/_header.html.slim (8.8ms)
+D, [2016-08-28T12:01:15.062255 #5279] DEBUG -- : [608ebb93-1ee2-4c73-90d5-208226814180]   [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T12:01:15.063600 #5279] DEBUG -- : [608ebb93-1ee2-4c73-90d5-208226814180]   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T12:01:15.064958 #5279] DEBUG -- : [608ebb93-1ee2-4c73-90d5-208226814180]   [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+I, [2016-08-28T12:01:15.065401 #5279]  INFO -- : [608ebb93-1ee2-4c73-90d5-208226814180]   Rendered post/_posts_list.html.slim (1.4ms)
+I, [2016-08-28T12:01:15.066553 #5279]  INFO -- : [608ebb93-1ee2-4c73-90d5-208226814180]   Rendered post/_post_modal.html.slim (0.9ms)
+I, [2016-08-28T12:01:15.066677 #5279]  INFO -- : [608ebb93-1ee2-4c73-90d5-208226814180]   Rendered post/new.html.slim within layouts/application (14.6ms)
+I, [2016-08-28T12:01:15.069316 #5279]  INFO -- : [608ebb93-1ee2-4c73-90d5-208226814180] Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 2.6ms)
+I, [2016-08-28T12:01:15.102016 #5279]  INFO -- : [9c4ac5a3-76b7-4c22-b816-e98b9f39d8f1] Started GET "/assets/application-fab3c824e957dca54127e9fd2d52182433801c287159c04905eb7e254d4f5334.css" for 127.0.0.1 at 2016-08-28 12:01:15 +0200
+I, [2016-08-28T12:01:15.106075 #5279]  INFO -- : [9de091f5-084a-43d0-8317-3c934c2ec635] Started GET "/assets/application-1265e12ae494e990ae108c0e1686af20b3a2301d79ef0cdc05dd82ef88313d86.js" for 127.0.0.1 at 2016-08-28 12:01:15 +0200
+I, [2016-08-28T12:01:15.121179 #5279]  INFO -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] Started GET "/uploads/user/avatar/1/ruby_gem.png" for 127.0.0.1 at 2016-08-28 12:01:15 +0200
+F, [2016-08-28T12:01:15.122679 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4]   
+F, [2016-08-28T12:01:15.122785 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] ActionController::RoutingError (No route matches [GET] "/uploads/user/avatar/1/ruby_gem.png"):
+F, [2016-08-28T12:01:15.122882 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4]   
+F, [2016-08-28T12:01:15.122949 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T12:01:15.123039 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T12:01:15.123105 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T12:01:15.123162 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T12:01:15.123226 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T12:01:15.123276 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T12:01:15.123325 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T12:01:15.123367 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T12:01:15.123407 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T12:01:15.123458 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T12:01:15.123504 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T12:01:15.123554 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T12:01:15.123601 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T12:01:15.123826 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T12:01:15.123890 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T12:01:15.123943 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T12:01:15.123997 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T12:01:15.124048 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T12:01:15.124097 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T12:01:15.124158 #5279] FATAL -- : [700deb07-26d0-44e3-b53c-792f747fc6a4] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T12:01:16.162224 #5279]  INFO -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] Started GET "/uploads/user/avatar/1/ruby_gem.png" for 127.0.0.1 at 2016-08-28 12:01:16 +0200
+F, [2016-08-28T12:01:16.163341 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5]   
+F, [2016-08-28T12:01:16.163435 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] ActionController::RoutingError (No route matches [GET] "/uploads/user/avatar/1/ruby_gem.png"):
+F, [2016-08-28T12:01:16.163479 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5]   
+F, [2016-08-28T12:01:16.163637 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T12:01:16.163671 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T12:01:16.163712 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T12:01:16.163747 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T12:01:16.163777 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T12:01:16.163804 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T12:01:16.163829 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T12:01:16.163861 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T12:01:16.163890 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T12:01:16.163913 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T12:01:16.163937 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T12:01:16.163959 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T12:01:16.163985 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T12:01:16.164010 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T12:01:16.164033 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T12:01:16.164055 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T12:01:16.164077 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T12:01:16.164100 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T12:01:16.164126 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T12:01:16.164148 #5279] FATAL -- : [579a82f3-2c33-43d1-b9ff-7c14cca775d5] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T12:03:37.969484 #5279]  INFO -- : [38717a41-eb02-43af-88a5-4c661b6468c3] Started GET "/" for 127.0.0.1 at 2016-08-28 12:03:37 +0200
+I, [2016-08-28T12:03:37.970534 #5279]  INFO -- : [38717a41-eb02-43af-88a5-4c661b6468c3] Processing by PostController#new as HTML
+I, [2016-08-28T12:03:37.972227 #5279]  INFO -- : [38717a41-eb02-43af-88a5-4c661b6468c3]   Rendering post/new.html.slim within layouts/application
+D, [2016-08-28T12:03:37.974575 #5279] DEBUG -- : [38717a41-eb02-43af-88a5-4c661b6468c3]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T12:03:37.978344 #5279] DEBUG -- : [38717a41-eb02-43af-88a5-4c661b6468c3]   [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+I, [2016-08-28T12:03:37.978868 #5279]  INFO -- : [38717a41-eb02-43af-88a5-4c661b6468c3]   Rendered post/_header.html.slim (6.1ms)
+D, [2016-08-28T12:03:37.979956 #5279] DEBUG -- : [38717a41-eb02-43af-88a5-4c661b6468c3]   [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T12:03:37.981242 #5279] DEBUG -- : [38717a41-eb02-43af-88a5-4c661b6468c3]   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T12:03:37.982700 #5279] DEBUG -- : [38717a41-eb02-43af-88a5-4c661b6468c3]   [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+I, [2016-08-28T12:03:37.983137 #5279]  INFO -- : [38717a41-eb02-43af-88a5-4c661b6468c3]   Rendered post/_posts_list.html.slim (1.4ms)
+I, [2016-08-28T12:03:37.984564 #5279]  INFO -- : [38717a41-eb02-43af-88a5-4c661b6468c3]   Rendered post/_post_modal.html.slim (1.0ms)
+I, [2016-08-28T12:03:37.984748 #5279]  INFO -- : [38717a41-eb02-43af-88a5-4c661b6468c3]   Rendered post/new.html.slim within layouts/application (12.2ms)
+I, [2016-08-28T12:03:37.988014 #5279]  INFO -- : [38717a41-eb02-43af-88a5-4c661b6468c3] Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 2.2ms)
+I, [2016-08-28T12:03:38.037010 #5279]  INFO -- : [23fef111-b50e-4d26-8eed-dd7339e12871] Started GET "/assets/application-fab3c824e957dca54127e9fd2d52182433801c287159c04905eb7e254d4f5334.css" for 127.0.0.1 at 2016-08-28 12:03:38 +0200
+I, [2016-08-28T12:03:38.075976 #5279]  INFO -- : [ab867998-52ad-43de-84b5-77faf5ab613e] Started GET "/assets/application-1265e12ae494e990ae108c0e1686af20b3a2301d79ef0cdc05dd82ef88313d86.js" for 127.0.0.1 at 2016-08-28 12:03:38 +0200
+I, [2016-08-28T12:03:38.112202 #5279]  INFO -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] Started GET "/uploads/user/avatar/1/ruby_gem.png" for 127.0.0.1 at 2016-08-28 12:03:38 +0200
+F, [2016-08-28T12:03:38.113596 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546]   
+F, [2016-08-28T12:03:38.113699 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] ActionController::RoutingError (No route matches [GET] "/uploads/user/avatar/1/ruby_gem.png"):
+F, [2016-08-28T12:03:38.113754 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546]   
+F, [2016-08-28T12:03:38.113797 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+F, [2016-08-28T12:03:38.113835 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+F, [2016-08-28T12:03:38.113875 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+F, [2016-08-28T12:03:38.113922 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+F, [2016-08-28T12:03:38.113963 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+F, [2016-08-28T12:03:38.114007 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+F, [2016-08-28T12:03:38.114055 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+F, [2016-08-28T12:03:38.114101 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+F, [2016-08-28T12:03:38.114153 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+F, [2016-08-28T12:03:38.114207 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+F, [2016-08-28T12:03:38.114259 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+F, [2016-08-28T12:03:38.114312 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+F, [2016-08-28T12:03:38.114365 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2016-08-28T12:03:38.114428 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2016-08-28T12:03:38.114484 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+F, [2016-08-28T12:03:38.114553 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+F, [2016-08-28T12:03:38.114610 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+F, [2016-08-28T12:03:38.114666 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+F, [2016-08-28T12:03:38.114729 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+F, [2016-08-28T12:03:38.114785 #5279] FATAL -- : [ad91327e-fd93-4530-af38-a7e8d86c2546] puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+I, [2016-08-28T12:03:49.400198 #5673]  INFO -- : [6b23d538-1617-4452-8cf3-b93ca64670c0] Started GET "/" for 127.0.0.1 at 2016-08-28 12:03:49 +0200
+I, [2016-08-28T12:03:49.407290 #5673]  INFO -- : [6b23d538-1617-4452-8cf3-b93ca64670c0] Processing by PostController#new as HTML
+I, [2016-08-28T12:03:49.425344 #5673]  INFO -- : [6b23d538-1617-4452-8cf3-b93ca64670c0]   Rendering post/new.html.slim within layouts/application
+D, [2016-08-28T12:03:49.466891 #5673] DEBUG -- : [6b23d538-1617-4452-8cf3-b93ca64670c0]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T12:03:49.508203 #5673] DEBUG -- : [6b23d538-1617-4452-8cf3-b93ca64670c0]   [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+I, [2016-08-28T12:03:49.508577 #5673]  INFO -- : [6b23d538-1617-4452-8cf3-b93ca64670c0]   Rendered post/_header.html.slim (63.1ms)
+D, [2016-08-28T12:03:49.509818 #5673] DEBUG -- : [6b23d538-1617-4452-8cf3-b93ca64670c0]   [1m[35m (0.7ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T12:03:49.511255 #5673] DEBUG -- : [6b23d538-1617-4452-8cf3-b93ca64670c0]   [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T12:03:49.520182 #5673] DEBUG -- : [6b23d538-1617-4452-8cf3-b93ca64670c0]   [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+I, [2016-08-28T12:03:49.520586 #5673]  INFO -- : [6b23d538-1617-4452-8cf3-b93ca64670c0]   Rendered post/_posts_list.html.slim (8.3ms)
+I, [2016-08-28T12:03:49.529277 #5673]  INFO -- : [6b23d538-1617-4452-8cf3-b93ca64670c0]   Rendered post/_post_modal.html.slim (7.8ms)
+I, [2016-08-28T12:03:49.529449 #5673]  INFO -- : [6b23d538-1617-4452-8cf3-b93ca64670c0]   Rendered post/new.html.slim within layouts/application (104.0ms)
+I, [2016-08-28T12:03:50.022231 #5673]  INFO -- : [6b23d538-1617-4452-8cf3-b93ca64670c0] Completed 200 OK in 615ms (Views: 586.5ms | ActiveRecord: 12.3ms)
+I, [2016-08-28T12:03:50.055486 #5673]  INFO -- : [5d29c461-ea40-4ad4-95d5-1e43bfc1767d] Started GET "/assets/application-fab3c824e957dca54127e9fd2d52182433801c287159c04905eb7e254d4f5334.css" for 127.0.0.1 at 2016-08-28 12:03:50 +0200
+I, [2016-08-28T12:03:50.083193 #5673]  INFO -- : [3d0e7f74-641b-445c-a2c8-c9c2bad0344b] Started GET "/assets/application-1265e12ae494e990ae108c0e1686af20b3a2301d79ef0cdc05dd82ef88313d86.js" for 127.0.0.1 at 2016-08-28 12:03:50 +0200
+I, [2016-08-28T12:03:53.453403 #5673]  INFO -- : [ecc60d48-34c2-43bb-96f0-637522465c9a] Started GET "/users/edit" for 127.0.0.1 at 2016-08-28 12:03:53 +0200
+I, [2016-08-28T12:03:53.456035 #5673]  INFO -- : [ecc60d48-34c2-43bb-96f0-637522465c9a] Processing by Users::RegistrationsController#edit as HTML
+D, [2016-08-28T12:03:53.458543 #5673] DEBUG -- : [ecc60d48-34c2-43bb-96f0-637522465c9a]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2016-08-28T12:03:53.466207 #5673]  INFO -- : [ecc60d48-34c2-43bb-96f0-637522465c9a]   Rendering devise/registrations/edit.html.slim within layouts/application
+I, [2016-08-28T12:03:53.531089 #5673]  INFO -- : [ecc60d48-34c2-43bb-96f0-637522465c9a]   Rendered devise/registrations/edit.html.slim within layouts/application (64.6ms)
+I, [2016-08-28T12:03:53.533687 #5673]  INFO -- : [ecc60d48-34c2-43bb-96f0-637522465c9a] Completed 200 OK in 77ms (Views: 72.3ms | ActiveRecord: 0.7ms)
+I, [2016-08-28T12:04:00.661241 #5673]  INFO -- : [dbc97328-c09a-4c2b-b23c-5f2b91919e88] Started PUT "/users" for 127.0.0.1 at 2016-08-28 12:04:00 +0200
+I, [2016-08-28T12:04:00.662985 #5673]  INFO -- : [dbc97328-c09a-4c2b-b23c-5f2b91919e88] Processing by Users::RegistrationsController#update as HTML
+I, [2016-08-28T12:04:00.663232 #5673]  INFO -- : [dbc97328-c09a-4c2b-b23c-5f2b91919e88]   Parameters: {"utf8"=>"✓", "authenticity_token"=>"0WTi+GDzWW2SBwCkV4POAjgJZn9b/IWD88PloRV/UMtq6mwCzgABhrzSWaqim+Wj60wlcLTAwJDXPviYRIY9jQ==", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00000007ca8210 @tempfile=#<Tempfile:/tmp/RackMultipart20160828-5673-1s7dnwy.png>, @original_filename="ruby_gem.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"ruby_gem.png\"\r\nContent-Type: image/png\r\n">, "avatar_cache"=>"", "email"=>"nait.samuel@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Mettre à jour"}
+D, [2016-08-28T12:04:00.665886 #5673] DEBUG -- : [dbc97328-c09a-4c2b-b23c-5f2b91919e88]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T12:04:00.670969 #5673] DEBUG -- : [dbc97328-c09a-4c2b-b23c-5f2b91919e88]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T12:04:00.673212 #5673] DEBUG -- : [dbc97328-c09a-4c2b-b23c-5f2b91919e88]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+D, [2016-08-28T12:04:00.717374 #5673] DEBUG -- : [dbc97328-c09a-4c2b-b23c-5f2b91919e88]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T12:04:00.720553 #5673] DEBUG -- : [dbc97328-c09a-4c2b-b23c-5f2b91919e88]   [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "avatar" = $2 WHERE "users"."id" = $3[0m  [["updated_at", 2016-08-28 10:04:00 UTC], ["avatar", "ruby_gem.png"], ["id", 1]]
+D, [2016-08-28T12:04:01.199522 #5673] DEBUG -- : [dbc97328-c09a-4c2b-b23c-5f2b91919e88]   [1m[35m (31.6ms)[0m  [1m[35mCOMMIT[0m
+I, [2016-08-28T12:04:01.213963 #5673]  INFO -- : [dbc97328-c09a-4c2b-b23c-5f2b91919e88] Redirected to http://localhost:3000/
+I, [2016-08-28T12:04:01.214248 #5673]  INFO -- : [dbc97328-c09a-4c2b-b23c-5f2b91919e88] Completed 302 Found in 551ms (ActiveRecord: 33.6ms)
+I, [2016-08-28T12:04:01.233224 #5673]  INFO -- : [b9e8208f-5633-4150-b102-47e673d6f693] Started GET "/" for 127.0.0.1 at 2016-08-28 12:04:01 +0200
+I, [2016-08-28T12:04:01.234322 #5673]  INFO -- : [b9e8208f-5633-4150-b102-47e673d6f693] Processing by PostController#new as HTML
+I, [2016-08-28T12:04:01.236183 #5673]  INFO -- : [b9e8208f-5633-4150-b102-47e673d6f693]   Rendering post/new.html.slim within layouts/application
+D, [2016-08-28T12:04:01.238253 #5673] DEBUG -- : [b9e8208f-5633-4150-b102-47e673d6f693]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2016-08-28T12:04:01.241451 #5673] DEBUG -- : [b9e8208f-5633-4150-b102-47e673d6f693]   [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+I, [2016-08-28T12:04:01.241839 #5673]  INFO -- : [b9e8208f-5633-4150-b102-47e673d6f693]   Rendered post/_header.html.slim (5.3ms)
+D, [2016-08-28T12:04:01.242662 #5673] DEBUG -- : [b9e8208f-5633-4150-b102-47e673d6f693]   [1m[35m (0.3ms)[0m  [1m[34mSELECT DISTINCT "posts"."tag" FROM "posts"[0m
+D, [2016-08-28T12:04:01.243691 #5673] DEBUG -- : [b9e8208f-5633-4150-b102-47e673d6f693]   [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+D, [2016-08-28T12:04:01.245155 #5673] DEBUG -- : [b9e8208f-5633-4150-b102-47e673d6f693]   [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+I, [2016-08-28T12:04:01.245555 #5673]  INFO -- : [b9e8208f-5633-4150-b102-47e673d6f693]   Rendered post/_posts_list.html.slim (1.4ms)
+I, [2016-08-28T12:04:01.246780 #5673]  INFO -- : [b9e8208f-5633-4150-b102-47e673d6f693]   Rendered post/_post_modal.html.slim (1.0ms)
+I, [2016-08-28T12:04:01.246910 #5673]  INFO -- : [b9e8208f-5633-4150-b102-47e673d6f693]   Rendered post/new.html.slim within layouts/application (10.6ms)
+I, [2016-08-28T12:04:01.249272 #5673]  INFO -- : [b9e8208f-5633-4150-b102-47e673d6f693] Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 2.3ms)

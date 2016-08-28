@@ -1,0 +1,23 @@
+- if user_signed_in?
+  - if current_user.admin?
+    h5#admin-message
+      | You're an Admin, you can delete any inconvenient post.
+  .row
+    #profile-thumb.col-xs-12.col-lg-3
+      h3 style="margin: 0; padding: 0" =current_user.username 
+      -if !current_user.avatar.file.nil?
+        =image_tag current_user.avatar.url
+      -else
+        =image_tag "no-avatar.png"
+      p.profile-thumb-line
+        =current_user.posts.length 
+        |  Posts
+    br
+    br
+    .col-xs-12.col-lg-8
+      button.btn.btn-primary.btn-lg.col-xs-12 type="button" data-toggle="modal" data-target="#post-modal"
+        |Write A Post
+
+    br
+    br
+    br 

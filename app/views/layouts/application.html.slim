@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    title
+      | Tagger
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    nav.navbar.navbar-light.bg-faded
+      .container
+        =link_to "Logo", root_path, class: "navbar-brand"
+        ul.nav.navbar-nav
+          li.nav-item.active
+            =link_to "Home", root_path, class: "nav-link"
+
+        ul.nav.navbar-nav.pull-xs-right
+          -if user_signed_in?
+            li.dropdown
+              a#profile-dropdown.nav-link.dropdown-toggle data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false"
+                =current_user.username
+                -if !current_user.avatar.file.nil?
+                  =image_tag current_user.avatar.url, id: "avatar"
+                -else
+                  =image_tag "no-avatar.png", id: "avatar"
+              .dropdown-menu role="menu" aria-labelledby="profile-dropdown"
+                =link_to "Profile", edit_user_registration_path, class:"dropdown-item"
+                =link_to "Log Out", destroy_user_session_path, method: :delete, class:"dropdown-item"
+          -else
+            li.nav-item
+              =link_to "Register", new_user_registration_path, class: "nav-link"
+            li.nav-item
+              =link_to "Log In", new_user_session_path, class: "nav-link"
+
+
+
+    .container
+      br
+      - flash.each do |type, msg| 
+        - if type == "notice"
+          .col-xs-12.col-lg-6.offset-lg-3.alert.alert-success
+            =msg
+        - elsif type == "alert"
+          .col-xs-12.col-lg-6.offset-lg-3.alert.alert-warning
+            =msg
+        - elsif type=="danger"
+          .col-xs-12.col-lg-6.offset-lg-3.alert.alert-danger
+            =msg
+    .container
+      = yield

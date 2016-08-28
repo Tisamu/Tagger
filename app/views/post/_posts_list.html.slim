@@ -1,0 +1,21 @@
+-@posts.each do  |p|
+  .post
+    p 
+      =link_to p.user.username, user_posts_path(p.user.username), class:"username"
+    =fa_icon("tag")
+    p.tag
+      =link_to tag_show_path(p.tag)
+        =p.tag
+    - if !p.picture.file.nil?
+      =image_tag p.picture.url, class:"post-pic"
+    p.message =p.message
+    br
+    - if p.user == current_user or (current_user and current_user.admin?)
+      p.admin
+        =link_to post_delete_path(post: p.id), data: { confirm: "Are you sure to Delete this Post?" }, method: :delete
+          =fa_icon("ban")
+          |  Delete
+    p.timestamp =p.created_at.strftime("%d/%m/%Y - %H:%M:%S")
+    / And here will be displayed more Posts by the Ajax Call => see main.coffee
+#infinite-scrolling
+  =will_paginate(@posts)

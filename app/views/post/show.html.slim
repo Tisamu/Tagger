@@ -1,0 +1,23 @@
+=render partial: "post/header"
+
+h2.col-xs-12.col-lg-12 style="text-align: center; margin-bottom: 30px;"
+  |Posts from 
+  =params[:username]
+
+.col-xs-12.col-lg-3
+  h5 Most Popular Tags
+  ul#tag-list.list-group
+    - Post.tag_top_ten.each do |tag|
+      li.list-group-item
+        =link_to tag_show_path(tag[:name])
+          =tag[:name]
+        span.tag.tag-info.tag-pill.pull-xs-right
+          =tag[:count]
+
+.col-xs-12.col-lg-8
+  .row
+    #post-list.col-xs-12
+      =render "posts_list", posts: @posts
+
+=render partial: "post/post_modal"
+

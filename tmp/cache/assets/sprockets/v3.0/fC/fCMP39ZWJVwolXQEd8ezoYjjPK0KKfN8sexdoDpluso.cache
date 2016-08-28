@@ -1,0 +1,27 @@
+I"$(function() {
+  $(function() {
+    $('#post_message').keyup(function() {
+      return $('#post-length').html($('#post_message').val().length + '/140 Max. characters');
+    });
+    if ($('#infinite-scrolling').length > 0) {
+      $(window).on('scroll', function() {
+        var more_posts_url;
+        more_posts_url = $('.pagination a[rel=next]').attr('href');
+        if (more_posts_url && $(window).scrollTop() > $(document).height() - $(window).height() - 60) {
+          $('.pagination').html("");
+          $.ajax({
+            url: more_posts_url,
+            success: function(data) {
+              return $("#post-list").append(data);
+            }
+          });
+        }
+        if (!more_posts_url) {
+          return $('.pagination').html("");
+        }
+      });
+    }
+  });
+
+}).call(this);
+:ET

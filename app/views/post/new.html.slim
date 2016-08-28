@@ -1,0 +1,26 @@
+=render partial: "post/header"
+
+.col-xs-12.col-lg-3
+  h5 Most Popular Tags
+  ul#tag-list.list-group
+    - if Post.tag_top_ten.length == 0
+      h5.nothing Nothing to Display..
+    -else
+      - Post.tag_top_ten.each do |tag|
+        li.list-group-item
+          =link_to tag_show_path(tag[:name])
+            =tag[:name]
+          span.tag.tag-info.tag-pill.pull-xs-right
+            =tag[:count]  
+
+.col-xs-12.col-lg-8
+  .row
+    -if Post.count == 0
+      h5.nothing Nothing to Display..
+    #post-list.col-xs-12
+      =render "posts_list", posts: @posts
+
+=render partial: "post/post_modal"
+
+
+
