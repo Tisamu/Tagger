@@ -19,4 +19,4 @@ Spécificités techniques:
 
 * Front: BootStrap 4-alpha, Font-Awesome (via sa gem).
 
-* Deploiement sur Heroku: [simplon-tagger.herokuapp.com)](https://simplon-tagger.herokuapp.com/)
+* ~~Deploiement sur Heroku: https://simplon-tagger.herokuapp.com/~~
